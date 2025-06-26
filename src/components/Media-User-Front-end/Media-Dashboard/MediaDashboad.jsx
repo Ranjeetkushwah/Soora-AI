@@ -1,0 +1,91 @@
+import React from 'react';
+import {
+  Box,
+  Grid,
+  Typography,
+  Button,
+  Paper,
+  Avatar,
+  LinearProgress,
+} from '@mui/material';
+import { Calendar, Users, Camera, Plus } from 'lucide-react';
+import ChartCard from './ChartCard';
+import StatsCard from './StatsCard';
+import RecentEventsTable from './RecentEventsTable';
+
+const MediaDashboard= () => {
+  const eventsData = [
+    { name: 'April', value: 12 },
+    { name: 'May', value: 5 },
+    { name: 'June', value: 8 },
+    { name: 'July', value: 7 },
+    { name: 'Aug', value: 15 },
+    { name: 'Sept', value: 10 },
+  ];
+
+  const usersData = [
+    { name: 'April', value: 8 },
+    { name: 'May', value: 4 },
+    { name: 'June', value: 9 },
+    { name: 'July', value: 7 },
+    { name: 'Aug', value: 12 },
+    { name: 'Sept', value: 10 },
+  ];
+
+  return (
+    <Box sx={{ bgcolor: '#F4F6F8', minHeight: '100vh' }}>
+   
+
+      {/* Welcome + Action */}
+      <Box
+        sx={{
+          backgroundColor: '#305791',
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          p: 3,
+        }}
+      >
+        <Typography variant="h5" fontWeight="bold">
+          Hello, Tanmay Ahuja!
+        </Typography>
+        <Button
+          variant="contained"
+          startIcon={<Plus size={16} />}
+          sx={{ bgcolor: '#fff', color: '#1E3A8A', '&:hover': { bgcolor: '#E2E8F0' } }}
+        >
+          Create Event
+        </Button>
+      </Box>
+
+      {/* Main Content */}
+      <Box sx={{ p: 4 }}>
+        <Grid sx={{display:'flex',justifyContent:"space-between",alignItems:"center",gap:2}} spacing={5} mb={4} >
+          <Grid item xs={12} md={4}>
+            <ChartCard title="Total Events" value="204" icon={Calendar} data={eventsData} />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <ChartCard title="Total Users" value="350" icon={Users} data={usersData} />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <StatsCard
+              title="Photos Used"
+              value="1500"
+              icon={Camera}
+              showProgress
+              progressValue={50}
+              progressText="Remaining Photos"
+              upgradeButton
+            />
+          </Grid>
+        </Grid>
+
+        {/* Recent Events Table */}
+        <RecentEventsTable />
+      </Box>
+    </Box>
+  );
+};
+
+export default MediaDashboard;
