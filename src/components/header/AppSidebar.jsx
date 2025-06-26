@@ -7,6 +7,7 @@ import {
   ListItemIcon,
   ListItemText,
   Typography,
+  Tooltip,
 } from '@mui/material';
 import {
   LayoutDashboard,
@@ -17,8 +18,6 @@ import {
   FileText,
 } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
-
-const drawerWidth = 240;
 
 // Icon mapping for menu items
 const getIcon = (label) => {
@@ -33,7 +32,9 @@ const getIcon = (label) => {
   return iconMap[label] || <LayoutDashboard size={20} />;
 };
 
-export default function AppSidebar({ open, onClose }) {
+export default function AppSidebar({
+
+  collapsed }) {
   const navigate = useNavigate();
 
   const menuItems = [
@@ -45,73 +46,63 @@ export default function AppSidebar({ open, onClose }) {
     { label: 'Transaction Logs', path: '/transaction-logs' }
   ];
 
-  const handleMenuClick = (path) => {
-    navigate(path);
-    onClose(); // Close the drawer after navigation
-  };
-
-  const drawerList = (
-    <Box
-      sx={{ width: drawerWidth, pt: 2 }}
-      role="presentation"
-      onClick={onClose}
-      onKeyDown={onClose}
-    >
-      {/* Optional: Add a header/logo section */}
-      <Box sx={{ px: 2, pb: 2 }}>
-        <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#1F3A63' }}>
-      Soora
-        </Typography>
-      </Box>
-      
-      <List sx={{ px: 1 }}>
-        {menuItems.map((item) => (
-          <ListItem
-            key={item.label}
-            sx={{
-              mb: 0.5,
-              borderRadius: '8px',
-              '&:hover': {
-                backgroundColor: '#305791',
-                color: 'white',
-                '& .MuiListItemIcon-root': {
-                  color: 'white'
-                }
-              },
-              cursor: 'pointer'
-            }}
-            onClick={() => handleMenuClick(item.path)}
-          >
-            <ListItemIcon sx={{ minWidth: 40, color: '#666' }}>
-              {getIcon(item.label)}
-            </ListItemIcon>
-            <ListItemText
-              primary={item.label}
-              primaryTypographyProps={{
-                fontFamily: 'Poppins, sans-serif',
-                fontWeight: 400,
-                fontSize: '14px'
-              }}
-            />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
   return (
     <Drawer
-      anchor="left"
-      open={open}
-      onClose={onClose}
+      variant="permanent"
       sx={{
+        width: collapsed ? 72 : 240,
+        flexShrink: 0,
         '& .MuiDrawer-paper': {
-          width: drawerWidth,
+          width: collapsed ? 72 : 240,
           boxSizing: 'border-box',
+          top: '64px',
+          height: 'calc(100vh - 128px)', // 64px header + 64px footer
+          transition: 'width 0.3s',
+          overflow: 'hidden',
+          alignItems: "center"
         },
+
       }}
     >
-      {drawerList}
+
+      <List>
+        {menuItems.map((item) => (
+          <Tooltip title={collapsed ? item.label : ''} placement="right" key={item.label}>
+            <ListItem
+              onClick={() => navigate(item.path)}
+              sx={{
+                mb: 0.5,
+                borderRadius: 1,
+                mx: 1,
+
+                justifyContent: collapsed ? 'center' : 'flex-start',
+                '&:hover': {
+                  backgroundColor: '#305791',
+                  color: 'white',
+                  '& .MuiListItemIcon-root': {
+                    color: 'white',
+                  },
+                },
+              }}
+            >
+              <ListItemIcon sx={{ color: '#666', minWidth: collapsed ? 'auto' : 40, justifyContent: 'center' }}>
+                {getIcon(item.label)}
+              </ListItemIcon>
+              {!collapsed && (
+                <ListItemText
+                  primary={item.label}
+                  primaryTypographyProps={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontWeight: 400,
+                    fontSize: 14,
+                  }}
+                />
+              )}
+            </ListItem>
+          </Tooltip>
+        ))}
+      </List>
     </Drawer>
   );
 }
+

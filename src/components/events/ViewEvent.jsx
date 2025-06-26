@@ -30,9 +30,13 @@ import QRCode from 'qrcode';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import { useNavigate } from "react-router-dom";
 import EventPhotos from './EventPhotos';
+import PublishEventDialog from './PublishEventDialog';
 
 const ViewEvent = () => {
   const [qrCodeUrl, setQrCodeUrl] = useState('');
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+
   const [eventData] = useState({
     id: '01256',
     type: 'Wedding',
@@ -100,7 +104,7 @@ const ViewEvent = () => {
     const navigate = useNavigate();
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
       {/* Header */}
       <Card sx={{ mb: 2, bgcolor: '#305791', color: 'white' }}>
         <CardContent>
@@ -170,44 +174,44 @@ const ViewEvent = () => {
       {/* Event Details Accordion */}
       <Accordion defaultExpanded sx={{ mb: 2 }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="h6">1. Event Details</Typography>
+          <Typography color="#1F3A63" variant="h6">1. Event Details</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails onClick={() => setDialogOpen(true)}>
           <Box sx={{width:200}} >
             <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                <Typography color="text.secondary">Event ID:</Typography>
-                <Typography fontWeight="bold">{eventData.id}</Typography>
+                <Typography color="#1F3A63">Event ID:</Typography>
+                <Typography color="#1F3A63" fontWeight="bold">{eventData.id}</Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                <Typography color="text.secondary">Event Type:</Typography>
-                <Typography fontWeight="bold">{eventData.type}</Typography>
+                <Typography color="#1F3A63">Event Type:</Typography>
+                <Typography color="#1F3A63" fontWeight="bold">{eventData.type}</Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                <Typography color="text.secondary">Event Date:</Typography>
-                <Typography fontWeight="bold">{eventData.date}</Typography>
+                <Typography color="#1F3A63">Event Date:</Typography>
+                <Typography color="#1F3A63" fontWeight="bold">{eventData.date}</Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                <Typography color="text.secondary">Event Location:</Typography>
-                <Typography fontWeight="bold">{eventData.location}</Typography>
+                <Typography color="#1F3A63">Event Location:</Typography>
+                <Typography color="#1F3A63" fontWeight="bold">{eventData.location}</Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                <Typography color="text.secondary">Event Photos:</Typography>
-                <Typography fontWeight="bold">{eventData.photos}</Typography>
+                <Typography color="#1F3A63">Event Photos:</Typography>
+                <Typography color="#1F3A63" fontWeight="bold">{eventData.photos}</Typography>
               </Box>
             </Grid>
             <Grid item xs={12} sm={6}>
               <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                <Typography color="text.secondary">Event Users:</Typography>
-                <Typography fontWeight="bold">{eventData.users}</Typography>
+                <Typography color="#1F3A63">Event Users:</Typography>
+                <Typography color="#1F3A63" fontWeight="bold">{eventData.users}</Typography>
               </Box>
             </Grid>
           </Box>
@@ -215,12 +219,12 @@ const ViewEvent = () => {
       </Accordion>
 
       {/* Share Event Accordion */}
-      <Accordion defaultExpanded>
+      <Accordion defaultExpanded sx={{ mb: 2 }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="h6">2. Share Event</Typography>
+          <Typography color="#1F3A63" variant="h6">2. Share Event</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Grid container sx={{ gap: 10 }} spacing={3}>
+          <Grid container sx={{ gap: 10, color: "#1F3A63" }} spacing={3}>
             {/* QR Code Section */}
             <Grid item xs={12} md={6}>
               <Typography variant="subtitle1" gutterBottom fontWeight="bold">
@@ -307,15 +311,25 @@ const ViewEvent = () => {
 
       <Accordion defaultExpanded sx={{ mb: 2 }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography variant="h6">3. Event Photos </Typography>
-         <span style={{ color: "#999", fontSize: "14px" }}>
+          <Typography color="#1F3A63" variant="h6">3. Event Photos <span style={{ color: "#1F3A63", fontSize: "14px" }}>
                   (4 Folders and 8 Photos)
-                </span>
+          </span> </Typography>
+
         </AccordionSummary>
         <AccordionDetails>
  <EventPhotos/>
 
           </AccordionDetails>  </Accordion>
+
+      <PublishEventDialog
+        open={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+        onPublish={() => {
+          // your publish logic here
+          setDialogOpen(false);
+        }}
+        eventName="Event Name"
+      />
     </Box>
   );
 };

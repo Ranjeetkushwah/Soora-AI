@@ -28,7 +28,7 @@ const CTASplit = () => {
           />
 
           {/* Left Box */}
-          <Grid item xs={12} md={6}>
+          <Grid xs={12} md={6}>
             <Box sx={{ pr: { md: 5 }, textAlign: { xs: 'center', md: 'left' } }}>
               <Typography
                 variant="h5"

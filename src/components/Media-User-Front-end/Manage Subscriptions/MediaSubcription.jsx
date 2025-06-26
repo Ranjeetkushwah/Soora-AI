@@ -17,6 +17,7 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  Divider
 } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { Plus } from "lucide-react";
@@ -111,7 +112,7 @@ const MediaSubcription = () => {
   const navigate = useNavigate();
 
   return (
-    <Box p={3}>
+    <Box maxWidth={"1489px"} sx={{ my: 4, px: 1 }} >
       <Box
         sx={{
           backgroundColor: "#305791",
@@ -119,7 +120,9 @@ const MediaSubcription = () => {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          p: 3,
+          p: 2,
+          borderRadius: "8px",
+          width: "98%"
         }}
       >
         <Box
@@ -128,6 +131,7 @@ const MediaSubcription = () => {
             justifyContent: "space-around",
             alignItems: "center",
             gap: 2,
+
           }}
         >
           <Box    onClick={() => {
@@ -147,7 +151,8 @@ const MediaSubcription = () => {
        
           sx={{
             color: "white",
-            "&:hover": { bgcolor: "#E2E8F0",    color: "#1E3A8A"},
+            borderColor: "#FFFFFF",
+            "&:hover": { color: "#1E3A8A", },
             marginRight:2
           }}
         >
@@ -167,25 +172,27 @@ const MediaSubcription = () => {
         </Box>
       </Box>
       {/* Plans */}
-      <Grid  sx={{display:'flex',justifyContent:"space-around",alignItems:"center",gap:2}} spacing={3}>
+      <Grid sx={{ display: 'flex', justifyContent: "space-around", alignItems: "center", gap: 2, mt: 3, borderRadius: "8px" }} spacing={3}>
         {plans.map((plan) => (
-          <Grid item xs={12} md={4} key={plan.name}>
-            <Card variant="outlined" >
+          <Grid sx={{ width: '328px', }} key={plan.name}>
+            <Card sx={{ border: "1px solid #1F3A63", borderRadius: "8px" }} variant="outlined" >
               <CardContent>
-                <Typography variant="h6" fontWeight={600}>
+                <Box sx={{ display: 'flex', justifyContent: "space-between", alignItems: "center", }}>
+                  <Typography color="#1F3A63" variant="h6" fontWeight={600}>
                   {plan.name}
                 </Typography>
-                <Typography variant="h5" color="primary" gutterBottom>
+                  <Typography sx={{ fontSize: "36px", fontFamily: "Waylimo" }} variant="h5" color="#1F3A63" gutterBottom>
                   {plan.price}
-                </Typography>
-                <Typography>{plan.credits}</Typography>
+                  </Typography> </Box>
+                <Divider />
+                <Typography color="#305791" >{plan.credits}</Typography>
                 {plan.features.map((feature, idx) => (
-                  <Typography key={idx} fontSize="0.875rem">
+                  <Typography color="#305791" key={idx} fontSize="0.875rem">
                     • {feature}
                   </Typography>
                 ))}
                 <Box mt={2}>
-                  <Button variant="contained" fullWidth>
+                  <Button sx={{ backgroundColor: "#1F3A63" }} variant="contained" fullWidth>
                     Subscribe
                   </Button>
                 </Box>
@@ -203,10 +210,10 @@ const MediaSubcription = () => {
           alignItems="center"
           mb={2}
         >
-          <Typography variant="h6">Purchased Plans</Typography>
-          <IconButton onClick={handleMenuOpen}>
-            <FilterListIcon />
-          </IconButton>
+          <Typography sx={{ fontWeight: 700, color: "#1F3A63" }} variant="h6">Purchased Plans</Typography>
+
+          <Button variant="outlined" sx={{ fontWeight: 700, color: "#1F3A63", borderColor: '#1F3A63' }} onClick={handleMenuOpen} >  Filter <FilterListIcon /> </Button>
+
           <Menu
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
@@ -221,7 +228,7 @@ const MediaSubcription = () => {
 
         <TableContainer component={Paper}>
           <Table>
-            <TableHead sx={{ backgroundColor: "#1E293B" }}>
+            <TableHead sx={{ backgroundColor: "#1F3A63" }}>
               <TableRow>
                 {[
                   "SUBSCRIPTION PLAN",
@@ -240,7 +247,7 @@ const MediaSubcription = () => {
             <TableBody>
               {purchasedPlans.map((plan, index) => (
                 <TableRow key={index}>
-                  <TableCell>{plan.name}</TableCell>
+                  <TableCell sx={{ color: '#1F3A63' }}>{plan.name}</TableCell>
                   <TableCell>
                     <Chip
                       label={plan.status}
@@ -248,21 +255,21 @@ const MediaSubcription = () => {
                       size="small"
                     />
                   </TableCell>
-                  <TableCell>{plan.purchasedOn}</TableCell>
-                  <TableCell>{plan.expiry}</TableCell>
-                  <TableCell>{plan.photos}</TableCell>
-                  <TableCell>{plan.amount}</TableCell>
+                  <TableCell sx={{ color: '#305791' }}>{plan.purchasedOn}</TableCell>
+                  <TableCell sx={{ color: '#305791' }}>{plan.expiry}</TableCell>
+                  <TableCell sx={{ color: '#1F3A63' }}>{plan.photos}</TableCell>
+                  <TableCell sx={{ color: '#1F3A63' }}>{plan.amount}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
 
-        <Box mt={1} textAlign="right">
-          <Typography variant="body2">
+        <Box mt={1} sx={{ display: 'flex', justifyContent: "space-between", alignItems: "center", color: '#305791' }}>
+          <Typography color='#305791' variant="body2">
             Showing 1 to 10 of 20 Subscriptions
           </Typography>
-          <Button size="small">Next ›</Button>
+          <Button fontWeight='bold' size="small">Next ›</Button>
         </Box>
       </Box>
     </Box>

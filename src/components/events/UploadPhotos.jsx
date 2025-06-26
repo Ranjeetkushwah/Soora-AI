@@ -13,10 +13,33 @@ import {
   Checkbox
 } from "@mui/material";
 import { CloudUpload, MoreVert } from "@mui/icons-material";
+import { ArrowBack as ArrowBackIcon } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+
 
 export default function UploadPhotos() {
+
+  const navigate = useNavigate();
+
+  const promoImages = [
+    {
+      id: 1,
+      src: './src/assets/images/Frame 629142.svg',
+      alt: 'Frame 629142'
+    },
+    {
+      id: 2,
+      src: './src/assets/images/Group 232.svg',
+      alt: 'Group 232'
+    },
+    {
+      id: 3,
+      src: './src/assets/images/Group 233.svg',
+      alt: 'Group 232'
+    }
+  ];
   return (
-    <Container maxWidth="lg" sx={{ my: 4 }}>
+    <Container maxWidth="1489px" sx={{ my: 4 }}>
       {/* Header */}
       <Box
         sx={{
@@ -29,7 +52,13 @@ export default function UploadPhotos() {
           alignItems: "center"
         }}
       >
-        <Typography variant="h6">Upload Photos</Typography>
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <IconButton sx={{ color: 'white' }} onClick={() => { navigate(-1) }}>
+            <ArrowBackIcon />
+          </IconButton>
+          <Typography variant="h6">Upload Photos</Typography>
+        </Box>
+
         <Button
           variant="contained"
           sx={{ bgcolor: "#38598b", textTransform: "none" }}
@@ -95,7 +124,7 @@ export default function UploadPhotos() {
         </Typography>
         <Grid container spacing={2}>
           {/* Upload Button */}
-          <Grid item xs={6} sm={3}>
+          <Grid >
             <Box
               sx={{
                 border: "2px dashed #ccc",
@@ -107,19 +136,33 @@ export default function UploadPhotos() {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                alignItems: "center"
+                alignItems: "center",
+                position: "relative"
               }}
             >
-              <CloudUpload sx={{ fontSize: 40, color: "#999" }} />
-              <Typography sx={{ mt: 1, fontSize: "14px" }}>
-                Upload Folders/Photos
-              </Typography>
+              {/* Hidden file input */}
+              <input
+                type="file"
+                multiple
+                onChange={(event) => console.log(event.target.files)}
+                style={{ display: "none" }}
+                id="upload-button"
+              />
+
+              {/* Label styled as clickable box */}
+              <label htmlFor="upload-button" style={{ cursor: "pointer" }}>
+                <CloudUpload sx={{ fontSize: 40, color: "#999" }} />
+                <Typography sx={{ mt: 1, fontSize: "14px" }}>
+                  Upload Folders/Photos
+                </Typography>
+              </label>
             </Box>
+
           </Grid>
 
-          {/* Example Uploaded Images */}
-          {[1, 2, 3, 4].map((item) => (
-            <Grid item xs={6} sm={3} key={item}>
+
+          {promoImages.map((item) => (
+            <Grid key={item}>
               <Card sx={{ position: "relative" }}>
                 <Checkbox
                   sx={{
@@ -145,8 +188,8 @@ export default function UploadPhotos() {
                 <CardMedia
                   component="img"
                   height="150"
-                  image={`https://source.unsplash.com/200x200/?wedding,${item}`}
-                  alt="Uploaded Image"
+                  image={item.src}
+                  alt={item.alt}
                 />
               </Card>
             </Grid>

@@ -37,7 +37,7 @@ const rows = [
 export default function DashBoard() {
       const navigate = useNavigate();
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
       <Card sx={{ mb: 2, bgcolor: '#305791', color: 'white' }}>
         <CardContent>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -68,6 +68,7 @@ export default function DashBoard() {
               backgroundColor: "white",
               borderRadius: 2,
               p: 2,
+
             }}
           >
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -83,10 +84,10 @@ export default function DashBoard() {
         ))}
       </Box>
 
-      <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around", mt: 4, gap: 4 }}>
+      <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", mt: 4, gap: 2 }}>
         {tableSections.map((section) => (
           <Box key={section} sx={{ width: "528px" }}>
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", p: 2 }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", p: 2, width: "93%" }}>
               <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: 24, color: "#1F3A63" }}>
                 {section}
               </Typography>

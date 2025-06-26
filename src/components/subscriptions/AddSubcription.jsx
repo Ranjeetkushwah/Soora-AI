@@ -11,7 +11,8 @@ import {
   Typography,
   IconButton,
   Card,
-  CardContent
+  CardContent,
+  Avatar,
 } from '@mui/material';
 import { ArrowBack as ArrowBackIcon } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
@@ -20,28 +21,25 @@ export default function AddSubscription() {
   const navigate = useNavigate();
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2 }}>
-      <Container >
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
+      {/* <Container > */}
         {/* Header */}
-        <Box
-          sx={{
-            backgroundColor: '#305791',
-            borderRadius: 1,
-            mb: 3,
-            px: 2,
-            py: 1.5,
-            display: 'flex',
-            alignItems: 'center',
-            color: '#fff',
-          }}
-        >
-          <IconButton onClick={() => navigate(-1)} sx={{ color: 'white', mr: 1 }}>
+      <Card sx={{ mb: 2, bgcolor: '#305791', color: 'white' }}>
+        <CardContent>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <IconButton onClick={() => navigate(-1)} sx={{ color: 'white', mr: 1 }}>
             <ArrowBackIcon />
           </IconButton>
-          <Typography variant="h6" fontWeight="bold">
+            <Avatar
+              // src="./src/assests/27622444-f8e8-4432-a69e-1ad54b970776.png"
+              sx={{ width: 40, height: 40 }}
+            />
+            <Typography variant="h6" fontWeight="bold">
             Add Subscription
           </Typography>
-        </Box>
+          </Box>
+        </CardContent>
+      </Card>
 
         {/* Form */}
         <Box sx={{ p: 3, borderRadius: 2, bgcolor: 'white' }}>
@@ -125,7 +123,7 @@ export default function AddSubscription() {
             Add Subscription
           </Button>
         </Box>
-      </Container>
+      {/* </Container> */}
     </Box>
   );
 }

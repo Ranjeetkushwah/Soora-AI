@@ -15,21 +15,17 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { LogOut } from 'lucide-react';
-import AppSidebar from './AppSidebar';
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
+export default function Header({onToggleSidebar, setIsLoggedIn} ) {
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [logoutDialogOpen, setLogoutDialogOpen] = React.useState(false);
+
 
   const navigate = useNavigate();
   const isMenuOpen = Boolean(anchorEl);
 
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) return;
-    setDrawerOpen(open);
-  };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -55,22 +51,17 @@ export default function Header() {
      navigate('/dashboard');
   };
 
+
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#1F3A63' }}>
+      <AppBar position="static" sx={{ backgroundColor: '#1F3A63' }} >
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={toggleDrawer(true)}
-          >
+          <IconButton sx={{mr:1}} color="inherit" onClick={onToggleSidebar} >
             <MenuIcon />
           </IconButton>
 
-          <Box sx={{ flexGrow: 1 }} onClick={() => navigate('/')}>
+          <Box sx={{ flexGrow: 1 }} onClick={() =>{setIsLoggedIn(false); navigate('/')}}>
             <img src="./src/assets/white-01 1.svg" alt="Logo" height="32px" width="150px" />
           </Box>
 
@@ -87,7 +78,7 @@ export default function Header() {
         </Toolbar>
       </AppBar>
 
-      <AppSidebar open={drawerOpen} onClose={toggleDrawer(false)} />
+    
 
       {/* Profile Menu */}
       <Menu
@@ -115,6 +106,9 @@ export default function Header() {
         </MenuItem>
         <MenuItem onClick={() => navigate('/manage-payments')} sx={{ fontWeight: 500, color: '#1F3A63' }}>
        Manage Payments
+        </MenuItem>
+         <MenuItem onClick={() => navigate('/media-subcription')} sx={{ fontWeight: 500, color: '#1F3A63' }}>
+     Manage Subscriptions
         </MenuItem>
 
         <Divider sx={{ my: 1 }} />

@@ -49,7 +49,7 @@ const HomeFooter = () => {
 
 
               <Link
-                href="feature"
+                href="features"
                 underline="hover"
                 fontFamily={"Poppins"}
                 fontWeight="400"

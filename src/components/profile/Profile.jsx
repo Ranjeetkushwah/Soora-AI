@@ -48,7 +48,7 @@ const Profile = () => {
     };
 
     return (
-        <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2 }}>
+        <Box sx={{ maxWidth: "1489px", ml: "auto", p: 2 }}>
             <Card sx={{ bgcolor: "white" }} >
                 <CardHeader
                     sx={{

@@ -55,10 +55,10 @@ const Home = () => {
           container
           spacing={8}
           alignItems="center"
-          sx={{ position: "relative", zIndex: 1 }}
+          sx={{ position: "relative", zIndex: 1, }}
         >
           {/* Left Content */}
-          <Grid item xs={12} md={6}>
+          <Grid >
             <Box sx={{ maxWidth: 600 }}>
               <Typography
                 variant="h2"
@@ -146,7 +146,7 @@ const Home = () => {
           </Grid>
 
           {/* Right Content */}
-          <Grid item xs={12} md={6} display="flex" justifyContent="center">
+          <Grid display="flex" justifyContent="center">
             <Box position="relative" sx={{ ml: { xs: 0, md: 4 } }}>
               {/* Glow */}
               <Box

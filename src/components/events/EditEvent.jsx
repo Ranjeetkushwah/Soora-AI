@@ -68,7 +68,7 @@ const EditEvent = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2}}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1418, ml: "auto", p: 2 }}>
       {/* Header */}
       <Card sx={{ mb: 2, bgcolor: "#305791", color: "white" }}>
         <CardContent>

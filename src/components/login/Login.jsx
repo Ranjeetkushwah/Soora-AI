@@ -13,7 +13,7 @@ import {
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ setLogin }) {
+export default function Login({ setIsLoggedIn }) {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -134,7 +134,7 @@ export default function Login({ setLogin }) {
             }}
             onClick={() => {
               navigate("/dashboard");
-              setLogin(true);
+              setIsLoggedIn(true);
             }}
           >
             Login

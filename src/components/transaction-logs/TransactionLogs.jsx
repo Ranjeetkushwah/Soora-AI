@@ -205,7 +205,7 @@ const TransactionLogs= () => {
   const isSelected = (id) => selected.indexOf(id) !== -1;
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
  <Card sx={{ mb: 2, bgcolor: '#305791', color: 'white' }}>
         <CardContent>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>

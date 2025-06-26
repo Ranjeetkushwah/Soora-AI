@@ -65,7 +65,7 @@ export default function UsersList() {
   const displayUsers = tabValue === 0 ? activeUsers : archivedUsers;
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2  }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
       {/* Header */}
       <AppBar position="static" sx={{ backgroundColor: '#305791',borderRadius:"8px" }}>
         <Toolbar>

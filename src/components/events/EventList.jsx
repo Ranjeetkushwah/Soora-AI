@@ -203,7 +203,7 @@ const EventsList = () => {
   const someSelected = filteredEvents.some((event) => event.isSelected);
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
       {/* Header */}
       <Paper
         sx={{

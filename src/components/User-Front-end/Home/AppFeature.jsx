@@ -84,14 +84,7 @@ const AppFeature = () => {
             }}
           />
           {/* Phone Mockup */}
-          <Grid
-            ml={20}
-            item
-            xs={12}
-            lg={6}
-            display="flex"
-            justifyContent="center"
-          >
+          <Grid ml={20} display="flex" justifyContent="center">
             <Box sx={{ position: "relative" }}>
               <Box
                 sx={{
@@ -221,7 +214,7 @@ const AppFeature = () => {
         </Box>
 
         {/* Features List */}
-        <Grid item xs={12} lg={6}>
+        <Grid>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
             {features.map((feature, index) => (
               <Box key={index} display="flex" alignItems="flex-start" gap={3}>

@@ -24,7 +24,7 @@ const SignUpPromo = () => {
           gap={20}
         >
           {/* Screenshot Section */}
-          <Box item xs={12} md={5}>
+          <Box xs={12} md={5}>
             <Paper
               elevation={0}
               sx={{
@@ -56,7 +56,7 @@ const SignUpPromo = () => {
           </Box>
 
           {/* Text Section */}
-          <Box item xs={12} md={7}>
+          <Box xs={12} md={7}>
             <Typography
               sx={{
                 fontSize: { xs: '1.8rem', sm: '2.4rem' },

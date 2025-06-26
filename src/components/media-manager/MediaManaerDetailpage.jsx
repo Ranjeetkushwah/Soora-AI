@@ -61,7 +61,7 @@ const MediaManagerDetailpage = () => {
   ];
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1200, ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
       {/* Header */}
       <Card sx={{ mb: 2, backgroundColor: '#4a6fa5' }}>
         <CardContent sx={{ py: 2 }}>

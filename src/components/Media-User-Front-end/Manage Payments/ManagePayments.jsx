@@ -16,9 +16,11 @@ import {
 } from "@mui/material";
 import { ReceiptLong, ArrowBack } from "@mui/icons-material";
 import PaymentMethods from "./PaymentsMethods";
+import { useNavigate } from "react-router-dom";
 
 export default function ManagePayments() {
   const [tabValue, setTabValue] = useState(0);
+  const navigate = useNavigate();
 
   const handleTabChange = (event, newValue) => {
     setTabValue(newValue);
@@ -63,7 +65,8 @@ export default function ManagePayments() {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ my: 4 }}>
+    <Container maxWidth={"1489px"} sx={{ my: 4 }
+    }>
       {/* Header */}
       <Box
         sx={{
@@ -76,7 +79,10 @@ export default function ManagePayments() {
           alignItems: "center"
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box sx={{ display: "flex", alignItems: "center" }}
+
+          onClick={() => { navigate(-1) }}
+        >
           <ArrowBack sx={{ mr: 1 }} />
           <Typography variant="h6">Manage Payments</Typography>
         </Box>
@@ -110,7 +116,7 @@ export default function ManagePayments() {
                     <TableCell sx={{ color: "#1F3A63", fontWeight: "500" }}>
                       {row.id}
                     </TableCell>
-                    <TableCell>
+                    <TableCell sx={{ color: "#1F3A63" }}>
                       <strong>{row.description}</strong>
                     </TableCell>
                     <TableCell sx={{ color: "#1F3A63" }}>

@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography, Paper } from "@mui/material";
+import { Box, Grid, Typography, Paper } from "@mui/material";
 import KeyFeaturesSection from './KeyFeaturesSection'
 import  SignUpPromo from '../Home/SignUpPromo'
 import CTASplit from '../Home/CTASplit'
@@ -23,7 +23,7 @@ export default function FeaturesPage() {
         <Box sx={{ flexDirection: "row" }}>
           <Grid container spacing={40} alignItems="center">
             {/* Text Section */}
-            <Grid item xs={12} md={6}>
+            <Grid>
               <Typography
                 variant="h3"
                 sx={{
@@ -55,7 +55,7 @@ export default function FeaturesPage() {
             </Grid>
 
             {/* Image or Screenshot Placeholder */}
-            <Grid item xs={12} md={6}>
+            <Grid xs={12} md={6}>
               <Paper
                 elevation={3}
                 sx={{
