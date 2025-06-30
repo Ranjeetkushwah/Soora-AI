@@ -33,6 +33,7 @@ import MediaSubcription from './components/Media-User-Front-end/Manage Subscript
 import ManagePayments from './components/Media-User-Front-end/Manage Payments/ManagePayments.jsx';
 import UploadPhotos from './components/events/UploadPhotos.jsx';
 import EventPhotos from './components/events/EventPhotos.jsx';
+import NotFoundPage from './components/User-Front-end/NotFoundPage.jsx';
 
 export default function AppRoutes({setIsLoggedIn}) {
   const routes = useRoutes([
@@ -66,7 +67,7 @@ export default function AppRoutes({setIsLoggedIn}) {
     { path: '/manage-payments', element: <ManagePayments /> },
     { path: '/upload-photos', element: <UploadPhotos /> },
     { path: '/event-photos', element: <EventPhotos /> },
-    { path: '*', element: <h1>404 Not Found</h1> }
+    { path: '*', element: <NotFoundPage /> }
   ]);
 
   return routes;

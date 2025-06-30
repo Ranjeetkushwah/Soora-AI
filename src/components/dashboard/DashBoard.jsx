@@ -38,7 +38,21 @@ const rows = [
 export default function DashBoard() {
       const navigate = useNavigate();
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
+    <Box
+      sx={{
+        bgcolor: '#E6E6E6',
+        maxWidth: {
+          xs: '100%',     // mobile
+          sm: '600px',    // small screens
+          md: '900px',    // medium screens
+          lg: '1200px',   // large screens
+          xl: '1489px'    // extra large screens
+        },
+        ml: 'auto',
+        mr: 'auto',
+        p: 2
+      }}
+    >
       <Card sx={{ mb: 2, bgcolor: '#305791', color: 'white' }}>
         <CardContent>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>

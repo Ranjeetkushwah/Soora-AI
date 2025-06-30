@@ -70,14 +70,19 @@ export default function SignUp() {
             <br />
             event photos effortlessly.
           </Typography>
-          <Box mt={10}>
-            <img
-              src={Allimages.LaptopScreen}
-              alt="Laptop"
-              width="590px"
-              height="330px"
-            />
-          </Box>
+      <Box mt={10}>
+  <img
+    src={Allimages.LaptopScreen}
+    alt="Laptop"
+    style={{
+      width: "100%",
+      maxWidth: "590px",
+      height: "auto",
+      display: "block",
+      margin: "0 auto",
+    }}
+  />
+</Box>
           <Typography
             variant="body1"
             sx={{

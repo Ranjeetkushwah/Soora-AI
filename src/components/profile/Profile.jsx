@@ -48,7 +48,20 @@ const Profile = () => {
     };
 
     return (
-        <Box sx={{ maxWidth: "1489px", ml: "auto", p: 2 }}>
+        <Box
+            sx={{
+                width: "100%",
+                maxWidth: {
+                    xs: "100%",    // mobile
+                    sm: "600px",   // small screens
+                    md: "900px",   // medium screens
+                    lg: "1200px",  // large screens
+                    xl: "1489px"   // extra-large screens
+                },
+                mx: "auto",            // center horizontally
+                p: { xs: 1, sm: 2, md: 3 }
+            }}
+        >
             <Card sx={{ bgcolor: "white" }} >
                 <CardHeader
                     sx={{

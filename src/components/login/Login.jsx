@@ -45,7 +45,17 @@ export default function Login({ setIsLoggedIn }) {
           </Typography>
 
           <Box mt={10}>
-            <img src={Allimages.LaptopScreen} alt="Laptop" width="590" height="330" />
+            <img
+              src={Allimages.LaptopScreen}
+              alt="Laptop"
+              style={{
+                width: "100%",
+                maxWidth: "590px",
+                height: "auto",
+                display: "block",
+                margin: "0 auto",
+              }}
+            />
           </Box>
 
           <Typography sx={{ fontWeight: 300, mt: 4 }}>

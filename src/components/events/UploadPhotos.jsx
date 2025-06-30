@@ -40,7 +40,13 @@ export default function UploadPhotos() {
     }
   ];
   return (
-    <Container maxWidth="1489px" sx={{ my: 4 }}>
+    <Container
+      maxWidth="xl"
+      sx={{
+        maxWidth: "1489px",
+        my: 4
+      }}
+    >
       {/* Header */}
       <Box
         sx={{

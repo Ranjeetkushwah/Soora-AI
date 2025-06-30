@@ -38,7 +38,23 @@ const MediaDashboard = () => {
   ];
 
   return (
-    <Box sx={{ bgcolor: "#F4F6F8", minHeight: "100vh", maxWidth: "1489px", my: 4, px: 1 }}>
+    <Box
+      sx={{
+        bgcolor: "#F4F6F8",
+        minHeight: "100vh",
+        width: "100%",
+        maxWidth: {
+          xs: "100%",      // mobile
+          sm: "600px",     // small screens
+          md: "900px",     // medium screens
+          lg: "1200px",    // large screens
+          xl: "1489px"     // extra large screens
+        },
+        mx: "auto",        // center horizontally
+        my: 4,
+        px: { xs: 1, sm: 2, md: 3 }
+      }}
+    >
       <Box
         sx={{
           backgroundColor: "#305791",

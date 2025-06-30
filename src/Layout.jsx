@@ -88,7 +88,7 @@ const PublicHeader = () => {
     { label: "Features", path: "/features" },
     { label: "Pricing", path: "/pricing" },
     { label: "About Us", path: "/aboutus" },
-    { label: "Privacy Policy", path: "#privacy-policy" },
+    { label: "Privacy Policy", path: "/*" },
   ];
 
   const navigate = useNavigate();

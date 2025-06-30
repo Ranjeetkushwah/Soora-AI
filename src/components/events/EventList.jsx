@@ -235,7 +235,22 @@ const EventsList = () => {
   const someSelected = filteredEvents.some((event) => event.isSelected);
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2, height: "100%" }}>
+    <Box
+      sx={{
+        bgcolor: '#E6E6E6',
+        width: '100%',
+        maxWidth: {
+          xs: '100%',       // mobile
+          sm: '600px',      // small screens
+          md: '900px',      // medium screens
+          lg: '1200px',     // large screens
+          xl: '1489px'      // extra-large
+        },
+        mx: 'auto',           // center horizontally
+        p: { xs: 1, sm: 2, md: 3 }, // responsive padding
+        height: { xs: 'auto', md: '100%' } // adjust height for small screens
+      }}
+    >
       {/* Header */}
       <Paper
         sx={{

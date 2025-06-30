@@ -65,8 +65,16 @@ export default function ManagePayments() {
   ];
 
   return (
-    <Container maxWidth={"1489px"} sx={{ my: 4 }
-    }>
+    <Container
+      maxWidth={false}
+      sx={{
+        maxWidth: "1489px",
+        width: "100%",
+        mx: "auto",
+        my: 4,
+        px: { xs: 2, sm: 3, md: 4 }
+      }}
+    >
       {/* Header */}
       <Box
         sx={{

@@ -12,13 +12,24 @@ export default function FeaturesPage() {
       <Box
         sx={{
           backgroundImage: `url(${Allimages.BackgroundImage})`,
-          backgroundSize: "cover", 
-          backgroundRepeat: "no-repeat", 
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
-          py: { xs: 10, md: 12 },
-          px: { xs: 5, md: 5 },
+          backgroundColor: "#1F3A63", // fallback color
+          py: { xs: 6, sm: 8, md: 12 },
+          px: { xs: 2, sm: 3, md: 5 },
+          minHeight: "65vh",
+
+          maxWidth: {
+            xs: "100%",
+            sm: "600px",
+            md: "900px",
+            lg: "1200px",
+            xl: "1489px",
+          },
+          width: "100%",
+          mx: "auto",
           zIndex: 1,
-           minHeight: "65vh",
         }}
       >
         <Box sx={{ flexDirection: "row" }}>

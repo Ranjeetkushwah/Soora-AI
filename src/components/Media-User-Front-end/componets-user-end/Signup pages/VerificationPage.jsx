@@ -46,6 +46,7 @@ const VerificationPage = () => {
 
   return (
     <Grid container minHeight="100vh" gap={20}>
+
       {/* Left Section - Hero */}
       <Grid
         item
@@ -81,18 +82,19 @@ const VerificationPage = () => {
           All the events in one place.
         </Typography>
 
-        <Box
-          component="img"
-          src={Allimages.LaptopScreen}
-          alt="Laptop View"
-          sx={{
-            width: "100%",
-            maxWidth: { xs: 280, sm: 400, md: 500 },
-            my: { xs: 2, md: 4 },
-            height: "auto"
-          }}
-        />
-
+        <Box mt={10}>
+          <img
+            src={Allimages.LaptopScreen}
+            alt="Laptop"
+            style={{
+              width: "100%",
+              maxWidth: "590px",
+              height: "auto",
+              display: "block",
+              margin: "0 auto",
+            }}
+          />
+        </Box>
         <Typography
           variant="body1"
           sx={{
