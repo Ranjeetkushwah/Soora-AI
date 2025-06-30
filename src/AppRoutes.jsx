@@ -17,7 +17,7 @@ import ViewEvent from './components/events/ViewEvent.jsx';
 import EditEvent from './components/events/EditEvent.jsx';
 import UsersList from './components/User-List/UsersList.jsx';
 import UserDetail from './components/User-List/UserDetail.jsx';
-import SubscriptionsList from './components/subscriptions/subcriptionsList.jsx';
+import SubscriptionsList from './components/subscriptions/SubcriptionsList.jsx';
 import AddSubscription from './components/subscriptions/AddSubcription.jsx';
 import TransactionLogs from './components/transaction-logs/TransactionLogs.jsx';
 import Profile from './components/profile/Profile.jsx';
