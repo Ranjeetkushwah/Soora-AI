@@ -32,29 +32,6 @@ import WeddingCoverPhoto from "./cover photos/Wedding Cover Photo.jpg"
 import Keys from './icons/key.svg'
 
 
-// import DataSecurity from './feature icons/Commitment to Data Security.svg';
-// import ContinuousUpdates from './feature icons/Continuous Updates & Improvements.svg';
-
-// import Photo1 from './photos/photo1.jpg';
-// import Photo2 from './photos/photo2.jpg';
-// import AiIcon from "./src/assets/feature icons/State of the art AI Technology.svg";
-
-// import Group217 from "./Group 217.svg";
-
-
-
-// import EngagementGrid2 from "./Make a grid of 9 images of engagement pictures.svg";
-// import WeddingVowsGrid from "./make a grid of 9 images of Wedding Vows.svg";
-
-
-// import LaptopScreenBlank from './laptop scren blank.svg';
-
-// import Mobile from './mobile.svg';
-
-
-
-
-
 const Allimages = {
 
 
@@ -90,25 +67,6 @@ const Allimages = {
   BackGroundDisplayCoverPhotos,
   WeddingCoverPhoto,
   Keys
-  // LaptopScreenBlank,
-  // LaptopScreen,
-  // Mobile,
-
-  // SoraLogoWhiteBlue,
-
-  //   AiTechnology,
-  // DataSecurity,
-  // ContinuousUpdates,
-
-  //   Photo1,
-  // Photo2,
-  //   Frame629142,
-  // Group217,
-  // Group232,
-  // Group233,
-  // EngagementGrid1,
-  // EngagementGrid2,
-  // WeddingVowsGrid,
 };
 
 export default Allimages;
