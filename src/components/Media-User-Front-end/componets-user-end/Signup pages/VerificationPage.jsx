@@ -45,28 +45,21 @@ const VerificationPage = () => {
   };
 
   return (
-    <Grid container minHeight="100vh" gap={20}>
+    <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
 
       {/* Left Section - Hero */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+      <Box
         sx={{
           width: '50%',
           backgroundImage: `url(${Allimages.BackgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          color: "#fff",
-          p: { xs: 3, sm: 4, md: 4 },
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          minHeight: { xs: "40vh", md: "100vh" },
-          order: { xs: 1, md: 1 },
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: 'white',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          p: 4,
         }}
       >
         <Typography
@@ -109,21 +102,16 @@ const VerificationPage = () => {
           {!isSmall && <br />} you can easily browse, upload, and manage photos in one{" "}
           {!isSmall && <br />} convenient place.
         </Typography>
-      </Grid>
+      </Box>
 
       {/* Right Section - Form */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+      <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          p: { xs: 3, sm: 4, md: 8 },
-          position: "relative",
-          minHeight: { xs: "60vh", md: "100vh" },
-          order: { xs: 2, md: 2 },
+          width: '50%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          px: 6,
         }}
       >
         <Box
@@ -313,8 +301,8 @@ const VerificationPage = () => {
             Verify
           </Button>
         </Box>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 };
 

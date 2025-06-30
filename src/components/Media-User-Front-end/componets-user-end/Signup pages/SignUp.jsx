@@ -45,19 +45,20 @@ export default function SignUp() {
   };
 
   return (
-    <Grid container sx={{ minHeight: "100vh", backgroundColor: "#fff" }}>
+    <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       {/* Left Side */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+        <Box
         sx={{
-          width: "49%",
+          width: '50%',
           backgroundImage: `url(${Allimages.BackgroundImage})`,
-          color: "#fff",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: 'white',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-between',
           p: 4,
-          display: "flex",
-          alignItems: "center",
         }}
       >
         <Box sx={{ mx: "auto" }}>
@@ -98,20 +99,18 @@ export default function SignUp() {
             few clicks, all in one place.
           </Typography>
         </Box>
-      </Grid>
+      </Box>
 
       {/* Right Side */}
-      <Grid
-        item
-        xs={12}
-        md={6}
-        sx={{
-          p: 6,
-          display: "flex",
-          alignItems: "center",
-          color: "#1F3A63",
-        }}
-      >
+      <Box
+             sx={{
+               width: '50%',
+               display: 'flex',
+               flexDirection: 'column',
+               justifyContent: 'center',
+               px: 6,
+             }}
+           >
         <Box sx={{ width: "100%", maxWidth: 500, ml: "110px" }}>
           <Box sx={{ textAlign: "center", mb: 4 }}>
             <img
@@ -307,7 +306,7 @@ export default function SignUp() {
             </Typography>
           </form>
         </Box>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 }

@@ -57,20 +57,20 @@ const WelcomePlan = () => {
   const navigate = useNavigate();
 
   return (
-    <Grid container minHeight="100vh" backgroundColor="#fff">
+    <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
       {/* Left Side - Welcome Message */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+      <Box
         sx={{
-          width: "49%",
+          width: '50%',
           backgroundImage: `url(${Allimages.BackgroundImage})`,
-          color: "#fff",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: 'white',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          textAlign: 'center',
           p: 4,
         }}
       >
@@ -87,20 +87,18 @@ const WelcomePlan = () => {
             your needs.
           </Typography>
         </Box>
-      </Grid>
+      </Box>
 
       {/* Right Side - Plan Selection */}
-      <Grid
-        item
-        xs={12}
-        md={6}
+      <Box
         sx={{
-          p: { xs: 4, md: 8 },
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          marginLeft: "200px",
+          width: '50%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
+          px: 6,
         }}
       >
         {/* Back Button */}
@@ -219,8 +217,8 @@ const WelcomePlan = () => {
         >
           Make Payment
         </Button>
-      </Grid>
-    </Grid>
+      </Box>
+    </Box>
   );
 };
 
