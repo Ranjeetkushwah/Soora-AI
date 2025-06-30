@@ -42,19 +42,20 @@ const HomeFooter = () => {
               }}
             >
               {[
-                { label: "Home", href: "/#home" },
-                { label: "Features", href: "/#features" },
-                { label: "Pricing", href: "/#pricing" },
-                { label: "About Us", href: "/#aboutus" },
-                { label: "Privacy Policy", href: "/#privacy" },
+                { label: "Home", href: "/home" },
+                { label: "Features", href: "/features" },
+                { label: "Pricing", href: "/pricing" },
+                { label: "About Us", href: "/aboutus" },
+                { label: "Privacy Policy", href: "/privacy" },
               ].map((link) => (
                 <Link
                   key={link.label}
-                  href={link.href}
+                  // href={link.href}
                   underline="hover"
                   fontFamily="Poppins"
                   fontWeight="400"
                   color="#1F3A63"
+                  onClick={() => { navigate(`${link.href}`) }}
                   sx={{
                     fontSize: "1rem",
                     "&:focus": {
