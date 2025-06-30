@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Grid, Typography, Link } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import Allimages from '../../../assets'
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import Allimages from '../../../assets';
 
 const HomeFooter = () => {
   const navigate = useNavigate();
@@ -50,12 +50,12 @@ const HomeFooter = () => {
               ].map((link) => (
                 <Link
                   key={link.label}
-                  // href={link.href}
+                  component={RouterLink}
+                  to={link.href}
                   underline="hover"
                   fontFamily="Poppins"
                   fontWeight="400"
                   color="#1F3A63"
-                  onClick={() => { navigate(`${link.href}`) }}
                   sx={{
                     fontSize: "1rem",
                     "&:focus": {
