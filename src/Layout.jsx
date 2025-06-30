@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "./components/header/header";
+import MainHeader from "./components/header/MainHeader";
 import Footer from "./components/footer/Footer";
 import AppSidebar from "./components/header/AppSidebar";
 import AppRoutes from "./AppRoutes";
@@ -41,7 +42,7 @@ export default function Layout() {
       {!isAuthPage && (
         <Box sx={{ flexShrink: 0 }}>
           {isLoggedIn ? (
-            <Header
+            <MainHeader
               onToggleSidebar={() => setCollapsed((prev) => !prev)}
               setIsLoggedIn={setIsLoggedIn}
             />
