@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { useNavigate } from "react-router-dom";
+import Allimages from '../../assets';
 
 export default function Login({ setIsLoggedIn }) {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ export default function Login({ setIsLoggedIn }) {
       <Box
         sx={{
           width: '50%',
-          backgroundImage: "url('/src/assets/Background-Image 2.jpg')",
+          backgroundImage: `url(${Allimages.BackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'white',
@@ -44,7 +45,7 @@ export default function Login({ setIsLoggedIn }) {
           </Typography>
 
           <Box mt={10}>
-            <img src="/src/assets/laptop-screen.svg" alt="Laptop" width="590" height="330" />
+            <img src={Allimages.LaptopScreen} alt="Laptop" width="590" height="330" />
           </Box>
 
           <Typography sx={{ fontWeight: 300, mt: 4 }}>
@@ -65,7 +66,7 @@ export default function Login({ setIsLoggedIn }) {
         }}
       >
         <Box sx={{ textAlign: 'center', mb: 4 }}>
-          <img src="/src/assets/soora-icon-dark-blue.svg" alt="Soora" width={150} height={70} />
+          <img src={Allimages.SooraIconDarkBlue} alt="Soora" width={150} height={70} />
         </Box>
 
         <Typography variant="h4" align="center" sx={{color:'#1F3A63'}} gutterBottom>

@@ -37,26 +37,31 @@ const plans = [
 
 const SubscriptionPlan = () => {
   return (
-    <Box sx={{ backgroundColor: "#f9fafb", py: 8, px: 2 }}>
+    <Box sx={{ backgroundColor: "#f9fafb", pt: 8, px: 2, height: "180vh", pb: 0 }}>
       <Box maxWidth="lg" mx="auto">
-        <Grid container spacing={1} mb={"10px"} height="601px">
+        <Grid container spacing={1} mb={"10px"} height="inherit">
           {plans.map((plan, idx) => (
             <Grid item xs={12} md={1} key={idx}>
               <Card
                 sx={{
                   position: "relative",
-
                   boxShadow: plan.recommended ? 6 : 2,
                   transition: "0.3s",
                   "&:hover": {
                     boxShadow: 10,
                     border: "2px solid #305791",
-                    transform: "scale(1.03)", // Slight zoom-in on hover
+                    transform: "scale(1.03)",
                   },
                   mb: 3,
-                  width: "384px",
-
-
+                  width: {
+                    xs: "100%",      // full width on tiny screens
+                    sm: "90%",       // still large on small devices
+                    md: "360px",     // fixed size on medium+
+                    lg: "384px",
+                  },
+                  maxWidth: "384px",
+                  minWidth: { xs: "280px" }, // Prevent too-narrow cards
+                  mx: "auto",
                 }}
               >
                 {plan.recommended && (
@@ -71,44 +76,100 @@ const SubscriptionPlan = () => {
                       fontWeight: "bold",
                       bgcolor: "#ffe7c2",
                       color: "#1f2937",
-                      margin: '10px'
+                      margin: "10px",
                     }}
                   />
                 )}
-                <CardContent sx={{ m: 3 }}>
-                  <Typography variant="h6" fontWeight="bold" sx={{ fontFamily: "Poppins", fontSize: "32px", }} color="#1F3A63" mb={1}>
+                <CardContent sx={{ m: { xs: 2, sm: 3 } }}>
+                  <Typography
+                    variant="h6"
+                    fontWeight="bold"
+                    sx={{
+                      fontFamily: "Poppins",
+                      fontSize: { xs: "1.25rem", sm: "1.5rem", md: "2rem" }, // 20 → 24 → 32px
+                    }}
+                    color="#1F3A63"
+                    mb={1}
+                  >
                     {plan.title}
                   </Typography>
 
-                  <Typography variant="body2" color="#1F3A63" mb={3}>
+                  <Typography
+                    variant="body2"
+                    color="#1F3A63"
+                    mb={3}
+                    sx={{
+                      fontSize: { xs: "0.9rem", sm: "1rem" },
+                    }}
+                  >
                     {plan.description}
                   </Typography>
 
                   <Box mb={3}>
-                    <Typography variant="h4" color="#1F3A63" sx={{ fontFamily: "Waylimo", fontWeight: 400, fontSize: "48px" }}>
+                    <Typography
+                      variant="h4"
+                      color="#1F3A63"
+                      sx={{
+                        fontFamily: "Waylimo",
+                        fontWeight: 400,
+                        fontSize: { xs: "32px", sm: "40px", md: "48px" },
+                      }}
+                    >
                       {plan.credits}
                     </Typography>
-                    <Typography variant="caption" sx={{ fontFamily: "Poppins", fontWeight: 400, fontSize: "16px" }} color="#1F3A63">
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        fontFamily: "Poppins",
+                        fontWeight: 400,
+                        fontSize: { xs: "12px", sm: "14px", md: "16px" },
+                      }}
+                      color="#1F3A63"
+                    >
                       Photo Credits
                     </Typography>
                   </Box>
 
                   <Box mb={3}>
                     {plan.features.map((feature, i) => (
-                      <Box key={i} sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 1 }}>
+                      <Box
+                        key={i}
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1.5,
+                          mb: 1,
+                        }}
+                      >
                         {feature.includes("AI") ? (
                           <Bot size={18} color="#1F3A63" />
                         ) : (
                           <Headphones size={18} color="#1F3A63" />
                         )}
-                        <Typography variant="body2" color="#1F3A63" fontWeight={500}>
+                        <Typography
+                          variant="body2"
+                          color="#1F3A63"
+                          fontWeight={500}
+                          sx={{
+                            fontSize: { xs: "0.85rem", sm: "1rem" },
+                          }}
+                        >
                           {feature}
                         </Typography>
                       </Box>
                     ))}
                   </Box>
 
-                  <Typography variant="h5" sx={{ fontFamily: "Waylimo", fontWeight: 400, fontSize: "64px" }} color="#1F3A63" mb={2}>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontFamily: "Waylimo",
+                      fontWeight: 400,
+                      fontSize: { xs: "40px", sm: "52px", md: "64px" },
+                    }}
+                    color="#1F3A63"
+                    mb={2}
+                  >
                     {plan.price}
                   </Typography>
 
@@ -121,6 +182,7 @@ const SubscriptionPlan = () => {
                       color: "white",
                       py: 1.2,
                       borderRadius: 2,
+                      fontSize: { xs: "0.85rem", sm: "0.95rem" },
                     }}
                   >
                     Subscribe

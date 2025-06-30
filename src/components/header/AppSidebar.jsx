@@ -56,7 +56,7 @@ export default function AppSidebar({
           width: collapsed ? 72 : 240,
           boxSizing: 'border-box',
           top: '64px',
-          height: 'calc(100vh - 128px)', // 64px header + 64px footer
+          height: 'calc(100vh - 118px)', // 64px header + 64px footer
           transition: 'width 0.3s',
           overflow: 'hidden',
           alignItems: "center"

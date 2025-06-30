@@ -71,6 +71,38 @@ const EventsList = () => {
       photos: 487,
       isSelected: false,
       avatar: "AT",
+    }, {
+      id: "D1261",
+      eventName: "Bridgette's Wedding",
+      date: "Aug 28, 2024",
+      venue: "England",
+      type: "Wedding",
+      users: 225,
+      photos: 2350,
+      isSelected: false,
+      avatar: "BW",
+    },
+    {
+      id: "D1262",
+      eventName: "Heart Conference",
+      date: "Aug 15, 2024",
+      venue: "India",
+      type: "Conference",
+      users: 70,
+      photos: 320,
+      isSelected: false,
+      avatar: "HC",
+    },
+    {
+      id: "D1263",
+      eventName: "Robert's First",
+      date: "Aug 10, 2024",
+      venue: "Canada",
+      type: "Birthday",
+      users: 60,
+      photos: 455,
+      isSelected: false,
+      avatar: "RF",
     },
     ]);
 
@@ -203,7 +235,7 @@ const EventsList = () => {
   const someSelected = filteredEvents.some((event) => event.isSelected);
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2, height: "100%" }}>
       {/* Header */}
       <Paper
         sx={{
@@ -226,13 +258,16 @@ const EventsList = () => {
       {/* Tabs */}
       <Box
         sx={{
-          borderBottom: 1,
-          borderColor: "divider",
-          mb: 2,
+          // borderBottom: 1,
+          // borderColor: "divider",
+          // mb: 2,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-         marginRight: "20px" 
+          bgcolor: "white",
+          borderRadius: "  8px 8px 0px 0px",
+          p: 2,
+          width: "inherit"
         }}
       >
         <Tabs value={activeTab} onChange={handleTabChange}>
@@ -241,7 +276,10 @@ const EventsList = () => {
         </Tabs>
 
         {/* Search and Filter Bar */}
-        <Box sx={{ display: "flex", gap: 2, mb: 3, alignItems: "center" }}>
+        <Box sx={{
+          display: "flex", gap: 2, alignItems: "center", bgcolor: "white",
+          borderRadius: "8px"
+        }}>
           <TextField
             placeholder="Search events, venue, or type..."
             variant="outlined"
@@ -255,30 +293,26 @@ const EventsList = () => {
                 </InputAdornment>
               ),
             }}
-            sx={{ width: 300 }}
+            sx={{ width: 300, borderColor: "#1F3A63", color: "#1F3A63" }}
           />
           <Button
             variant="outlined"
             startIcon={<FilterIcon />}
-            sx={{ minWidth: 100 }}
+            sx={{ minWidth: 100, borderColor: "#1F3A63", color: "#1F3A63" }}
           >
             Filter
           </Button>
-          {activeTab === 1 && (
-            <Chip
-              label="Archived"
-              color="warning"
-              variant="outlined"
-              sx={{ ml: 2 }}
-            />
-          )}
+
         </Box>
       </Box>
 
       {/* Table */}
       <TableContainer
         component={Paper}
-        sx={{ boxShadow: "none", border: "1px solid #e0e0e0" ,width:"inherit" }}
+        sx={{
+          boxShadow: "none", width: "inherit", bgcolor: "white",
+          borderRadius: " 0px 0px 8px 8px ", p: 1
+        }}
       >
         <Table>
           <TableHead>
@@ -458,8 +492,8 @@ const EventsList = () => {
           alignItems: "center",
           mt: 2,
           py: 2,
-          width:"inherit",
-          gap:5
+          px: 2,
+          width: "inherit",
 
         }}
       >
@@ -471,6 +505,7 @@ const EventsList = () => {
           variant="outlined"
           size="small"
           disabled={filteredEvents.length === 0}
+          onClick={() => { navigate("/viewevent") }}
         >
           Next &gt;
         </Button>

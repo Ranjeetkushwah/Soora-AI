@@ -77,10 +77,10 @@ const events = [
 
 const RecentEventsTable= () => {
   return (
-    <Card sx={{ boxShadow: 1 }}>
-      <CardContent sx={{ p: 0 }}>
+    <Card sx={{ boxShadow: 1, }}>
+      <CardContent sx={{ p: 0, height: "302px", }}>
         <Box sx={{ p: 3, pb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant="h6" sx={{ fontWeight: 600, color: '#111827' }}>
+          <Typography variant="h6" sx={{ fontWeight: 900, color: '#1F3A63', fontFamily: "Poppins", fontSize: "20px" }}>
             Recent Events
           </Typography>
           <Button
@@ -94,7 +94,7 @@ const RecentEventsTable= () => {
         <TableContainer>
           <Table>
             <TableHead>
-              <TableRow sx={{ bgcolor: '#334155' }}>
+              <TableRow sx={{ bgcolor: '#1F3A63' }}>
                 <TableCell sx={{ color: 'white', fontWeight: 500, fontSize: '0.875rem' }}>
                   EVENT NAME
                 </TableCell>

@@ -1,6 +1,6 @@
-import React from "react";
 import { Box, Typography, Grid, Avatar, useTheme } from "@mui/material";
 import { Camera, QrCode, Search, Download, Share2 } from "lucide-react";
+import Allimages from '../../../assets'
 
 const AppFeature = () => {
   const theme = useTheme();
@@ -62,7 +62,7 @@ const AppFeature = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-around",
+          justifyContent: "center",
           alignItems: "center",
           gap: 20,
         }}
@@ -136,7 +136,7 @@ const AppFeature = () => {
                   >
                     <Box sx={{ textAlign: "center" }}>
                       <img
-                        src="/src/assets/soora-icon-dark-blue.svg"
+                        src={Allimages.SooraIconDarkBlue}
                         alt="Soora"
                         width={150}
                         height={70}
@@ -271,3 +271,4 @@ const AppFeature = () => {
 };
 
 export default AppFeature;
+

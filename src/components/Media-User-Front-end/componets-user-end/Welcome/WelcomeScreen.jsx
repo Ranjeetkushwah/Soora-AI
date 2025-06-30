@@ -15,11 +15,12 @@ import UploadIcon from '@mui/icons-material/CloudUpload';
 import EventIcon from '@mui/icons-material/Event';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import { useNavigate } from "react-router-dom";
+import Allimages from '../../../../assets';
 
 const WelcomeScreen = () => {
         const navigate = useNavigate();
   return (
-    <Grid container minHeight="100vh">
+    <Grid container minHeight="100vh" backgroundColor={'#fff'}>
       {/* Left Side: Welcome Message */}
       <Grid
         item
@@ -27,7 +28,7 @@ const WelcomeScreen = () => {
         md={6}
         sx={{
            width: "49%",
-          backgroundImage: "url('/src/assets/Background-Image 2.jpg')",
+          backgroundImage: `url(${Allimages.BackgroundImage})`,
           color: '#fff',
           display: 'flex',
           justifyContent: 'center',
@@ -52,7 +53,7 @@ const WelcomeScreen = () => {
         xs={12}
         md={6}
         sx={{
-          backgroundColor: '#fff',
+
           p: { xs: 4, md: 8 },
           display: 'flex',
           justifyContent: 'center',
@@ -65,7 +66,7 @@ const WelcomeScreen = () => {
           <Box textAlign="center" sx={{color:"#1F3A63"}}>
            <Box sx={{ textAlign: "center" }}>
                        <img
-                         src="/src/assets/soora-icon-dark-blue.svg"
+                src={Allimages.SooraIconDarkBlue}
                          alt="Soora"
                          width={150}
                          height={70}

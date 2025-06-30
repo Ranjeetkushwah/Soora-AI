@@ -15,6 +15,7 @@ import PhotoIcon from '@mui/icons-material/Photo';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import { useNavigate } from "react-router-dom";
+import Allimages from '../../../../assets';
 
 const WelcomeConfirmation = () => {
     const navigate = useNavigate();
@@ -27,7 +28,7 @@ const WelcomeConfirmation = () => {
         md={6}
         sx={{
              width: "49%",
-          backgroundImage: "url('/src/assets/Background-Image 2.jpg')",
+          backgroundImage: `url(${Allimages.BackgroundImage})`,
           color: '#fff',
           display: 'flex',
           justifyContent: 'center',
@@ -66,7 +67,7 @@ const WelcomeConfirmation = () => {
         <Box textAlign="center" mb={4}>
           <Box sx={{ textAlign: "center" }}>
                             <img
-                              src="/src/assets/soora-icon-dark-blue.svg"
+              src={Allimages.SooraIconDarkBlue}
                               alt="Soora"
                               width={150}
                               height={70}

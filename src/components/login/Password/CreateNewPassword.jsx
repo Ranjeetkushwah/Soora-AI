@@ -22,6 +22,7 @@ import {
   FiberManualRecord,
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import Allimages from "../../../assets";
 
 const CreateNewPassword = () => {
   const [passwords, setPasswords] = useState({
@@ -59,11 +60,13 @@ navigate(-1)
   const handleChangePassword = () => {
     // Handle password change
     console.log("Change password clicked", passwords);
+    navigate('/login')
   };
 
   const handleForgotPassword = () => {
     // Handle forgot password
     console.log("Forgot password clicked");
+    navigate('/forgot-password')
   };
 
   const passwordRequirements = [
@@ -124,7 +127,7 @@ navigate(-1)
                 mb: 2,
               }}
             >
-              <img src="./src/assets/soora-icon-dark-blue.svg" alt="" height="48px" width="48px" />
+              <img src={Allimages.SooraIconDarkBlue} alt={Allimages.SooraIconDarkBlue} height="48px" width="48px" />
             </Box>
             <Typography variant="h5" fontWeight="600" color="#1F3A63">
               Create a new password
@@ -143,7 +146,7 @@ navigate(-1)
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <img src="./src/assets/icons/key.svg" alt="key" height="16px" width="16px" />
+                    <img src={Allimages.Keys} alt="key" height="16px" width="16px" />
                   </InputAdornment>
                 ),
                 endAdornment: (
@@ -173,7 +176,7 @@ navigate(-1)
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <img src="./src/assets/icons/key.svg" alt="key" height="16px" width="16px" />
+                    <img src={Allimages.Keys} alt="key" height="16px" width="16px" />
                   </InputAdornment>
                 ),
                 endAdornment: (
@@ -199,7 +202,7 @@ navigate(-1)
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <img src="./src/assets/icons/key.svg" alt="key" height="16px" width="16px" />
+                    <img src={Allimages.Keys} alt="key" height="16px" width="16px" />
                   </InputAdornment>
                 ),
                 endAdornment: (

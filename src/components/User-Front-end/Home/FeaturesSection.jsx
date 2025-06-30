@@ -1,20 +1,19 @@
-import React from "react";
 import { Box, Typography, Grid, Paper } from "@mui/material";
-import { ScanLine, Folder, Shield } from "lucide-react";
+import Allimages from '../../../assets'
 
 const features = [
   {
-    iconPath: "./src/assets/feature icons/AI-Powered Face Recoginition.svg",
+    iconPath: `${Allimages.AIPoweredFace}`,
     title: "AI-Powered Face Recognition",
     description: "Accurate identification for a seamless search experience",
   },
   {
-    iconPath: "./src/assets/feature icons/Event based Collections.svg",
+    iconPath: `${Allimages.EventBasedCollection}`,
     title: "Event Based Collections",
     description: "Easily browse through photos from various events",
   },
   {
-    iconPath: "./src/assets/feature icons/Privacy Protection.svg",
+    iconPath: `${Allimages.PrivacyProtection}`,
     title: "Privacy Protection",
     description: "Your data is secure; we prioritize your privacy",
   },

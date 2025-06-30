@@ -93,7 +93,7 @@ const UserDetail = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: "1489px", ml: "auto", p: 2, height: "100%" }}>
       {/* Header */}
       <Card sx={{ mb: 2, background: '#305791' }}>
         <CardContent sx={{ py: 2 }}>
@@ -124,9 +124,9 @@ const UserDetail = () => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Grid container spacing={-2} sx={{display:'flex',flexDirection:"column"}} >
+            <Grid container spacing={1} sx={{ display: 'flex', flexDirection: "column" }} >
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     User Name :
                   </Typography>
@@ -134,7 +134,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Registered on :
                   </Typography>
@@ -142,7 +142,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Email ID :
                   </Typography>
@@ -150,7 +150,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Phone Number :
                   </Typography>
@@ -158,7 +158,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Date of Birth :
                   </Typography>
@@ -166,7 +166,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Gender :
                   </Typography>
@@ -174,7 +174,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Country :
                   </Typography>
@@ -182,7 +182,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Events :
                   </Typography>
@@ -190,7 +190,7 @@ const UserDetail = () => {
                 </Box>
               </Grid>
               <Grid item xs={12} sm={6}>
-                <Box sx={{ mb: 2 }}>
+                <Box sx={{ mb: 2, display: "flex", justifyContent: "flex-start", alignItems: "center", gap: '10px' }}>
                   <Typography variant="body2" color="#1F3A63" sx={{ fontWeight: '500' }}>
                     Photos :
                   </Typography>

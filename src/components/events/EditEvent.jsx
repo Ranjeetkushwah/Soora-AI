@@ -28,13 +28,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useNavigate } from "react-router-dom";
+import Allimages from "../../assets";
 
 const EditEvent = () => {
   const [category, setCategory] = React.useState("");
   const [eventDate, setEventDate] = React.useState("");
   const [eventName, setEventName] = React.useState("");
   const [venue, setVenue] = React.useState("");
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const UploadBox = styled(Box)(() => ({
     border: "2px dashed #B0B7C3",
@@ -51,11 +52,16 @@ const EditEvent = () => {
   }));
 
   const imageOptions = [
-    "./src/assets/cover photos/Birthday cover photo.jpg",
-    "./src/assets/cover photos/Conference Cover Photo.jpg",
-    "./src/assets/cover photos/Group 246.jpg",
-    "./src/assets/cover photos/Group 248.jpg",
-    "./src/assets/cover photos/Wedding Cover Photo.jpg",
+    `${Allimages.BirthdayCoverPhoto}`,
+    `${Allimages.ConferenceCoverPhoto}`,
+    `${Allimages.PartyChillersCoverPhotos}`,
+    `${Allimages.BackGroundDisplayCoverPhotos}`,
+    `${Allimages.WeddingCoverPhoto}`,
+    `${Allimages.BirthdayCoverPhoto}`,
+    `${Allimages.ConferenceCoverPhoto}`,
+    `${Allimages.PartyChillersCoverPhotos}`,
+    `${Allimages.BackGroundDisplayCoverPhotos}`,
+    `${Allimages.WeddingCoverPhoto}`,
   ];
 
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -68,12 +74,17 @@ const EditEvent = () => {
   };
 
   return (
-    <Box sx={{ bgcolor: '#E6E6E6', maxWidth: 1418, ml: "auto", p: 2 }}>
+    <Box sx={{ bgcolor: "#E6E6E6", maxWidth: "1489px", ml: "auto", p: 2 }}>
       {/* Header */}
       <Card sx={{ mb: 2, bgcolor: "#305791", color: "white" }}>
         <CardContent>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <IconButton sx={{ color: "white" }} onClick={()=>{navigate(-1)}}>
+            <IconButton
+              sx={{ color: "white" }}
+              onClick={() => {
+                navigate(-1);
+              }}
+            >
               <ArrowBackIcon />
             </IconButton>
             <Avatar
@@ -87,23 +98,30 @@ const EditEvent = () => {
         </CardContent>
       </Card>
       {/* Edit Event Details  */}
-      <Accordion defaultExpanded sx={{ mb: 2, color:"#1F3A63",fontWeight:'bold' }}>
+      <Accordion
+        defaultExpanded
+        sx={{ mb: 2, color: "#1F3A63", fontWeight: "bold" }}
+      >
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography sx={{ color:"#1F3A63",fontWeight:'bold'}} variant="h6">1. Event Details</Typography>
+          <Typography
+            sx={{ color: "#1F3A63", fontWeight: "bold" }}
+            variant="h6"
+          >
+            1. Event Details
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Grid
             container
-            sx={{ display: "flex" , flexDirection: "column" }}
+            sx={{ display: "flex", flexDirection: "column" }}
             spacing={2}
           >
             {/* Event Name */}
 
-            <Grid item xs={12} md={6} >
+            <Grid item xs={12} md={6}>
               <TextField
                 label="Event Name"
                 fullWidth
-                
                 value={eventName}
                 onChange={(e) => setEventName(e.target.value)}
                 placeholder="Enter Event name"
@@ -195,10 +213,16 @@ const EditEvent = () => {
       </Accordion>
 
       <Accordion defaultExpanded sx={{ mb: 2, padding: 2 }}>
-        <Typography sx={{ color:"#1F3A63",fontWeight:'bold'}} variant="h6">2. Cover Photo</Typography>
+        <Typography sx={{ color: "#1F3A63", fontWeight: "bold" }} variant="h6">
+          2. Cover Photo
+        </Typography>
 
         <Box mt={4}>
-          <Typography sx={{ color:"#1F3A63",fontWeight:'bold'}} fontWeight={600} mb={1}>
+          <Typography
+            sx={{ color: "#1F3A63", fontWeight: "bold" }}
+            fontWeight={600}
+            mb={1}
+          >
             Upload Cover Photo
           </Typography>
 
@@ -233,7 +257,11 @@ const EditEvent = () => {
           </Box>
 
           {/* Image selection grid */}
-          <Typography sx={{ color:"#1F3A63",fontWeight:'bold'}} fontWeight={600} mb={1}>
+          <Typography
+            sx={{ color: "#1F3A63", fontWeight: "bold" }}
+            fontWeight={600}
+            mb={1}
+          >
             Select Cover Photo
           </Typography>
           <Grid container spacing={2}>
@@ -242,7 +270,7 @@ const EditEvent = () => {
                 <Box
                   component="img"
                   src={img}
-                  alt={`option-${index}`}
+                  alt={`Options-${index}`}
                   sx={{
                     width: "187px",
                     height: 100,

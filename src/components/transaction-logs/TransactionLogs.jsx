@@ -127,7 +127,7 @@ const mockData= [
 ];
 
 const TransactionLogs= () => {
-  const [data, setData] = useState(mockData);
+  const [data] = useState(mockData);
   const [selected, setSelected] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);

@@ -11,12 +11,13 @@ import { useNavigate } from "react-router-dom";
 import {   Card,
   CardContent, IconButton,Avatar} from "@mui/material";
 import { ArrowBack as ArrowBackIcon} from "@mui/icons-material";
+import Allimages from "../../assets";
 
 const statCards = [
-  { label: "Events", count: 204, icon: "./src/assets/icons/Confetti Fill.svg" },
-  { label: "Media Managers", count: 125, icon: "./src/assets/icons/IdentificationBadge Fill.svg" },
-  { label: "Users", count: 1250, icon: "./src/assets/icons/UserFocus Fill.svg" },
-  { label: "Subscriptions", count: 125, icon: "./src/assets/icons/Receipt Fill.svg" },
+  { label: "Events", count: 204, icon: `${Allimages.EventsIcon}` },
+  { label: "Media Managers", count: 125, icon: `${Allimages.IdentificationBadge}` },
+  { label: "Users", count: 1250, icon: `${Allimages.UserFocusFill}` },
+  { label: "Subscriptions", count: 125, icon: `${Allimages.ReceiptFill}` },
 ];
 
 const tableSections = [

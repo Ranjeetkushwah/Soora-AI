@@ -18,10 +18,8 @@ export default function Footer() {
         © 2024 Soora. All Rights Reserved.
       </Typography>
 
-      <Box sx={{ display: 'flex', gap: 2 }}>
-        <Link href="#" underline="hover" color="inherit">
-          Privacy Policy
-        </Link>
+      <Box sx={{ display: 'flex', gap: 2, fontWeight: 700, fontFamily: "Poppins" }}>
+
         <Link href="#" underline="hover" color="inherit">
           Terms & Conditions
         </Link>

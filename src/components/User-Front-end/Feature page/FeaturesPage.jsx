@@ -4,18 +4,19 @@ import  SignUpPromo from '../Home/SignUpPromo'
 import CTASplit from '../Home/CTASplit'
 import GetInTouch from '../Home/GetInTouch'
 import HomeFooter from '../Home/HomeFooter'
+import Allimages from '../../../assets'
 
 export default function FeaturesPage() {
   return (
     <>
       <Box
         sx={{
-          backgroundImage: "url('./src/assets/Background-Image 2.svg')",
+          backgroundImage: `url(${Allimages.BackgroundImage})`,
           backgroundSize: "cover", 
           backgroundRepeat: "no-repeat", 
           backgroundPosition: "center",
           py: { xs: 10, md: 12 },
-          px: { xs:10, md: 12 },
+          px: { xs: 5, md: 5 },
           zIndex: 1,
            minHeight: "65vh",
         }}
@@ -59,20 +60,21 @@ export default function FeaturesPage() {
               <Paper
                 elevation={3}
                 sx={{
-                  p: 5,
+                  p: { xs: 3, sm: 4, md: 5 },
                   bgcolor: "white",
-                  borderRadius: 1,
+                  borderRadius: 2,
                   textAlign: "center",
-                  width: "486px",
-                  height: "198px",
+                  width: { xs: "100%", sm: "350px", md: "486px" },
+                  height: { xs: "auto", md: "198px" },
                 }}
               >
                 <Typography
                   sx={{
-                    fontSize: "1rem",
+                    fontSize: { xs: "0.95rem", md: "1rem" },
                     color: "#1F3A63",
-                    fontFamily: "inherit",
-                    paddingTop: "50px",
+                    fontFamily: "Poppins",
+                    pt: { xs: 2, md: 5 },
+                    lineHeight: 1.5,
                   }}
                 >
                   Screenshot of Soora
@@ -83,6 +85,7 @@ export default function FeaturesPage() {
                   Application Homepage
                 </Typography>
               </Paper>
+
             </Grid>
           </Grid>
         </Box>

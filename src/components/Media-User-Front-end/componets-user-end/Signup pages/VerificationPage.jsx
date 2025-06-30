@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import {
   Box,
   Grid,
@@ -7,57 +7,109 @@ import {
   Button,
   Link,
   IconButton,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import { useNavigate } from "react-router-dom";
+import Allimages from "../../../../assets";
 
 const VerificationPage = () => {
   const navigate = useNavigate();
+  const theme = useTheme();
+  // const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const inputsRef = useRef([]);
+
+  const handleChange = (e, index) => {
+    const value = e.target.value;
+
+    // only accept single char (letters/digits)
+    if (!/^[0-9a-zA-Z]?$/.test(value)) return;
+
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
+    if (value && index < otp.length - 1) {
+      inputsRef.current[index + 1]?.focus();
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === "Backspace" && otp[index] === "" && index > 0) {
+      inputsRef.current[index - 1]?.focus();
+    }
+  };
+
   return (
-    <Grid container minHeight="100vh">
-      {/* Left Section */}
+    <Grid container minHeight="100vh" gap={20}>
+      {/* Left Section - Hero */}
       <Grid
         item
         xs={12}
         md={6}
         sx={{
-          width: "49%",
-          backgroundImage: "url('/src/assets/Background-Image 2.jpg')",
+          width: '50%',
+          backgroundImage: `url(${Allimages.BackgroundImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           color: "#fff",
-          p: 4,
+          p: { xs: 3, sm: 4, md: 4 },
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
+          minHeight: { xs: "40vh", md: "100vh" },
+          order: { xs: 1, md: 1 },
         }}
       >
         <Typography
-          variant="h5"
-          sx={{ mb: 2, fontFamily: "Waylimo, sans-serif", fontSize: "32px" }}
+          variant={isSmall ? "h6" : "h5"}
+          sx={{
+            mb: { xs: 2, md: 2 },
+            fontFamily: "Waylimo, sans-serif",
+            fontSize: { xs: "1.5rem", sm: "1.8rem", md: "2rem" },
+            lineHeight: 1.3,
+            px: { xs: 2, md: 0 }
+          }}
         >
           All the events in one place.
         </Typography>
 
         <Box
           component="img"
-          src="/src/assets/laptop-screen.svg"
+          src={Allimages.LaptopScreen}
           alt="Laptop View"
-          sx={{ width: "100%", maxWidth: 500, my: 4 }}
+          sx={{
+            width: "100%",
+            maxWidth: { xs: 280, sm: 400, md: 500 },
+            my: { xs: 2, md: 4 },
+            height: "auto"
+          }}
         />
 
         <Typography
           variant="body1"
-          sx={{ maxWidth: 500, fontSize: "18px", fontFamily: "normal" }}
+          sx={{
+            maxWidth: { xs: "100%", md: 500 },
+            fontSize: { xs: "0.9rem", sm: "1rem", md: "1.125rem" },
+            fontFamily: "normal",
+            lineHeight: { xs: 1.4, md: 1.5 },
+            px: { xs: 2, md: 0 }
+          }}
         >
           You're almost there! Get instant access to all your events, where{" "}
-          <br /> you can easily browse, upload, and manage photos in one
-          <br /> convenient place.
+          {!isSmall && <br />} you can easily browse, upload, and manage photos in one{" "}
+          {!isSmall && <br />} convenient place.
         </Typography>
       </Grid>
 
-      {/* Right Section */}
+      {/* Right Section - Form */}
       <Grid
         item
         xs={12}
@@ -66,16 +118,34 @@ const VerificationPage = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          p: { xs: 4, md: 8 },
-          marginLeft: "200px",
+          p: { xs: 3, sm: 4, md: 8 },
           position: "relative",
-     
+          minHeight: { xs: "60vh", md: "100vh" },
+          order: { xs: 2, md: 2 },
         }}
       >
-        <Box maxWidth={400} mx="auto" >
+        <Box
+          maxWidth={400}
+          mx="auto"
+          sx={{
+            width: "100%",
+            px: { xs: 1, sm: 2, md: 0 }
+          }}
+        >
+          {/* Back Button */}
           <IconButton
             size="small"
-            sx={{ color: "white", bgcolor: "#1F3A63",position:"absolute", top: "30px",left: "-162px" }}
+            sx={{
+              color: "white",
+              bgcolor: "#1F3A63",
+              position: "absolute",
+              top: { xs: 20, md: 30 },
+              left: { xs: 20, md: 30 },
+              zIndex: 10,
+              "&:hover": {
+                bgcolor: "#2a4a73",
+              }
+            }}
             onClick={() => {
               navigate(-1);
             }}
@@ -83,23 +153,39 @@ const VerificationPage = () => {
             <ArrowBackIcon />
           </IconButton>
 
-          <Box textAlign="center" mt={2} >
-            <Box sx={{ textAlign: "center" }}>
+          {/* Logo and Header */}
+          <Box textAlign="center" mt={{ xs: 4, md: 2, }}>
+            <Box sx={{ textAlign: "center", mb: { xs: 2, md: 3 } }}>
               <img
-                src="/src/assets/soora-icon-dark-blue.svg"
+                src={Allimages.SooraIconDarkBlue}
                 alt="Soora"
-                width={150}
-                height={70}
+                style={{
+                  width: isSmall ? "48px" : "78px",
+                  height: "auto",
+                }}
               />
             </Box>
-            <Typography variant="h6" mt={1} fontWeight="bold" color="#1F3A63">
+
+            <Typography
+              variant={isSmall ? "h6" : "h6"}
+              fontWeight="bold"
+              color="#1F3A63"
+              sx={{
+                fontSize: { xs: "1.25rem", md: "1.5rem" },
+                mb: 1
+              }}
+            >
               Verification
             </Typography>
+
             <Typography
               variant="body2"
-              mt={1}
-              fontSize={"16px"}
               color="#305791"
+              sx={{
+                fontSize: { xs: "0.875rem", md: "1rem" },
+                lineHeight: 1.4,
+                px: { xs: 1, md: 0 }
+              }}
             >
               We have sent a code to{" "}
               <Box component="span" fontWeight="bold">
@@ -109,34 +195,95 @@ const VerificationPage = () => {
           </Box>
 
           {/* OTP Input */}
-          <Box mt={4} display="flex" justifyContent="space-between" gap={1}>
-            {[...Array(6)].map((_, idx) => (
+          <Box
+            mt={{ xs: 3, md: 4 }}
+            display="flex"
+            justifyContent="space-between"
+            gap={{ xs: 0.5, sm: 1 }}
+            sx={{
+              flexWrap: { xs: "wrap", sm: "nowrap" },
+              "& > *": {
+                flex: { xs: "0 0 calc(16.666% - 4px)", sm: "1" }
+              }
+            }}
+          >
+            {otp.map((val, idx) => (
               <TextField
                 key={idx}
+                value={val}
+                onChange={(e) => handleChange(e, idx)}
+                onKeyDown={(e) => handleKeyDown(e, idx)}
+                inputRef={(el) => (inputsRef.current[idx] = el)}
                 variant="outlined"
-                sx={{ width: "48px", borderRadius: "8px", height: "48px" }}
+                size="small"
+                sx={{
+                  width: { xs: "40px", sm: "48px" },
+                  minWidth: { xs: "40px", sm: "48px" },
+                }}
                 inputProps={{
                   maxLength: 1,
-                  style: { textAlign: "center", fontSize: 20 },
+                  style: {
+                    textAlign: "center",
+                    fontSize: isSmall ? 16 : 20,
+                    height: isSmall ? "40px" : "48px",
+                    padding: 0,
+                  },
+                }}
+                InputProps={{
+                  sx: {
+                    borderRadius: "8px",
+                    height: { xs: "40px", sm: "48px" },
+                    padding: 0,
+                    "& fieldset": {
+                      borderColor: "#e0e0e0",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#1F3A63",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#1F3A63",
+                    },
+                  },
                 }}
               />
             ))}
           </Box>
 
           {/* Timer */}
-          <Typography textAlign="center" mt={2} color="text.secondary">
+          <Typography
+            textAlign="center"
+            mt={{ xs: 2, md: 2 }}
+            color="text.secondary"
+            sx={{
+              fontSize: { xs: "1rem", md: "1.125rem" },
+              fontWeight: "medium"
+            }}
+          >
             02:30
           </Typography>
 
           {/* Resend Link */}
           <Typography
             textAlign="center"
-            mt={2}
-            fontSize={14}
+            mt={{ xs: 1.5, md: 2 }}
             color="text.secondary"
+            sx={{
+              fontSize: { xs: "0.875rem", md: "0.875rem" },
+              px: { xs: 1, md: 0 }
+            }}
           >
             Didn't receive a code?{" "}
-            <Link href="#" underline="hover">
+            <Link
+              href="#"
+              underline="hover"
+              sx={{
+                color: "#1F3A63",
+                fontWeight: "medium",
+                "&:hover": {
+                  color: "#2a4a73"
+                }
+              }}
+            >
               Resend OTP
             </Link>
           </Typography>
@@ -146,10 +293,16 @@ const VerificationPage = () => {
             variant="contained"
             fullWidth
             sx={{
-              mt: 3,
+              mt: { xs: 3, md: 3 },
               backgroundColor: "#1F3A63",
               borderRadius: 2,
               textTransform: "none",
+              py: { xs: 1.5, md: 1.5 },
+              fontSize: { xs: "0.9rem", md: "1rem" },
+              fontWeight: "medium",
+              "&:hover": {
+                backgroundColor: "#2a4a73",
+              },
             }}
             onClick={() => {
               navigate("/welcomescreen");

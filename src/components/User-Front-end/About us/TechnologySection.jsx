@@ -1,18 +1,18 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { Bot, ShieldCheck, RefreshCw } from "lucide-react";
+import Allimages from '../../../assets'
 const technologies = [
   {
-    iconPath: "./src/assets/feature icons/State of the art AI Technology.svg",
+    iconPath: `${Allimages.StateOfAiTechnology}`,
     title: "State of the art AI Technology",
   },
   {
-    iconPath: "./src/assets/feature icons/Commitment to Data Security.svg",
+    iconPath: `${Allimages.CommitmentToDataSecurity}`,
     title: "Commitment to Data Security",
   },
   {
-    iconPath:
-      "./src/assets/feature icons/Continuous Updates & Improvements.svg",
+    iconPath: `${Allimages.ContinuousUpdatesImprovements}`,
     title: "Continuous Updates & Improvements",
   },
 ];
@@ -26,7 +26,7 @@ const TechnologySection = () => {
           background: "white",
           px: 15,
           pt: "74px",
-          pb: "68px",
+          pb: "35px",
           height: "fit-content",
         }}
       >

@@ -1,133 +1,90 @@
 import React from "react";
-import { Box, Container, Grid, Typography,Link } from "@mui/material";
+import { Box, Container, Grid, Typography, Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Allimages from '../../../assets'
 
-  
 const HomeFooter = () => {
   const navigate = useNavigate();
+
   return (
     <Box sx={{ bgcolor: "#fff", py: 6, width: "100%" }}>
       <Container>
-        <Grid container spacing={40}>
+        <Grid
+          container
+          spacing={4}
+          justifyContent="space-between"
+          alignItems="flex-start"
+        >
           {/* Logo Section */}
           <Grid item xs={12} sm={4}>
             <Box
-              sx={{ display: "flex", alignItems: "center" }}
+              sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
               onClick={() => navigate("/")}
             >
               <img
-                src="./src/assets/sora_log-white-blue.svg"
+                src={Allimages.SoraLogoWhiteBlue}
                 alt="Soora Logo"
-                height="32px"
-                width="120px"
+                height="32"
+                width="120"
               />
             </Box>
           </Grid>
 
           {/* Navigation Section */}
-          <Grid item xs={12} sm={4} gap={2}>
+          <Grid item xs={12} sm={4}>
             <Box
-              sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 1 }}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 2,
+                mt: { xs: 4, sm: 1 },
+                alignItems: { xs: "center", sm: "flex-start" },
+              }}
             >
+              {[
+                { label: "Home", href: "/#home" },
+                { label: "Features", href: "/#features" },
+                { label: "Pricing", href: "/#pricing" },
+                { label: "About Us", href: "/#aboutus" },
+                { label: "Privacy Policy", href: "/#privacy" },
+              ].map((link) => (
                 <Link
-                href="Home"
-                underline="hover"
-                fontFamily={"Poppins"}
-                fontWeight="400"
-                color="#1F3A63"
-                   sx=
-              {{
-                "&:focus": {
-                  fontWeight: "900",
-                  fontFamily: "Poppins",
-                  color: "#1F3A63",
-                },
-              }}
-              >
-                Home
-              </Link>
-
-
-              <Link
-                href="features"
-                underline="hover"
-                fontFamily={"Poppins"}
-                fontWeight="400"
-                color="#1F3A63"
-                   sx=
-              {{
-                "&:focus": {
-                  fontWeight: "900",
-                  fontFamily: "Poppins",
-                  color: "#1F3A63",
-                },
-              }}
-              >
-                Features
-              </Link>
-              <Link
-                href="pricing"
-                underline="hover"
-                fontFamily={"Poppins"}
-                fontWeight="400"
-                color="#1F3A63"
-                   sx=
-              {{
-                "&:focus": {
-                  fontWeight: "900",
-                  fontFamily: "Poppins",
-                  color: "#1F3A63",
-                },
-              }}
-              >
-                Pricing
-              </Link>
-              <Link
-                href="aboutus"
-                underline="hover"
-                fontFamily={"Poppins"}
-                fontWeight="400"
-                color="#1F3A63"
-                   sx=
-              {{
-                "&:focus": {
-                  fontWeight: "900",
-                  fontFamily: "Poppins",
-                  color: "#1F3A63",
-                },
-              }}
-              >
-                About Us
-              </Link>
-              <Link
-                href="#privacy"
-                underline="hover"
-                fontFamily={"Poppins"}
-                fontWeight="400"
-                color="#1F3A63"
-                   sx=
-              {{
-                "&:focus": {
-                  fontWeight: "900",
-                  fontFamily: "Poppins",
-                  color: "#1F3A63",
-                },
-              }}
-              >
-                Privacy Policy
-              </Link>
+                  key={link.label}
+                  href={link.href}
+                  underline="hover"
+                  fontFamily="Poppins"
+                  fontWeight="400"
+                  color="#1F3A63"
+                  sx={{
+                    fontSize: "1rem",
+                    "&:focus": {
+                      fontWeight: 900,
+                      color: "#1F3A63",
+                    },
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </Box>
           </Grid>
 
           {/* Location Section */}
           <Grid item xs={12} sm={4}>
             <Box
-              sx={{ display: "flex", flexDirection: "column", gap: 2, mt: 1 }}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+                mt: { xs: 4, sm: 1 },
+                alignItems: { xs: "center", sm: "flex-start" },
+                textAlign: { xs: "center", sm: "left" },
+              }}
             >
               <Typography
                 variant="subtitle1"
                 fontWeight="900"
-                fontFamily={"Poppins"}
+                fontFamily="Poppins"
                 gutterBottom
                 color="#1F3A63"
               >
@@ -135,7 +92,7 @@ const HomeFooter = () => {
               </Typography>
               <Typography
                 variant="body2"
-                fontFamily={"Poppins"}
+                fontFamily="Poppins"
                 fontWeight="400"
                 color="#1F3A63"
               >
@@ -143,7 +100,7 @@ const HomeFooter = () => {
               </Typography>
               <Typography
                 variant="body2"
-                fontFamily={"Poppins"}
+                fontFamily="Poppins"
                 fontWeight="400"
                 color="#1F3A63"
               >
@@ -151,7 +108,7 @@ const HomeFooter = () => {
               </Typography>
               <Typography
                 variant="body2"
-                fontFamily={"Poppins"}
+                fontFamily="Poppins"
                 fontWeight="400"
                 color="#1F3A63"
               >

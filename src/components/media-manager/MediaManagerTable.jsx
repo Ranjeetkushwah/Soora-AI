@@ -347,7 +347,7 @@ const MediaManagerTable = () => {
         <Typography variant="body2" color="text.secondary">
           Showing {filteredManagers.length} of {activeTab === 0 ? mediaManagers.length : archivedManagers.length}
         </Typography>
-        <Button variant="outlined" size="small">
+        <Button onClick={() => { navigate("/media-manager/1") }} variant="outlined" size="small">
           Next &gt;
         </Button>
       </Box>

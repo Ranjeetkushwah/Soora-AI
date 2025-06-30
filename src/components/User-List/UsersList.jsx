@@ -48,7 +48,7 @@ const userData = [
 export default function UsersList() {
   const [tabValue, setTabValue] = useState(0);
   const [searchTerm, setSearchTerm] = useState('');
-  const [users, setUsers] = useState(userData);
+  const [users] = useState(userData);
   const navigate = useNavigate();
 
   const handleTabChange = (_, newValue) => setTabValue(newValue);
@@ -79,7 +79,7 @@ export default function UsersList() {
       <Box sx={{ p: 3 }}>
         <Paper>
           {/* Tabs and Filters */}
-          <Box sx={{ p: 2, borderBottom: 1, borderColor: 'divider' }}>
+          <Box sx={{ p: 1, borderBottom: 1, borderColor: 'divider' }}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
               <Tabs value={tabValue} onChange={handleTabChange}>
                 <Tab label="Active Users" sx={{ textTransform: 'none', fontWeight: tabValue === 0 ? 600 : 400 }} />
@@ -108,10 +108,10 @@ export default function UsersList() {
           </Box>
 
           {/* Table */}
-          <TableContainer>
-            <Table>
+          <TableContainer >
+            <Table >
               <TableHead>
-                <TableRow sx={{ backgroundColor: '#305791' }}>
+                <TableRow sx={{ backgroundColor: '#1F3A63' }}>
                   <TableCell padding="checkbox" sx={{ color: 'white' }}>
                     <Checkbox sx={{ color: 'white' }} />
                   </TableCell>

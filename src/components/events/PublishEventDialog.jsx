@@ -8,6 +8,7 @@ import {
   Typography,
   Box
 } from '@mui/material';
+import Allimages from '../../assets';
 
 import PublishIcon from '@mui/icons-material/CloudUpload'; // You can replace this with a logo/icon
 
@@ -25,8 +26,7 @@ export default function PublishEventDialog({ open, onClose, onPublish, eventName
       }}
     >
         <Box sx={{ textAlign: "center" }}>
-                       <img
-                         src="/src/assets/soora-icon-dark-blue.svg"
+        <img src={Allimages.SooraIconDarkBlue}
                          alt="Soora"
                          width={150}
                          height={70}

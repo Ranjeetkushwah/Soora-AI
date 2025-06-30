@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Container, Stack } from "@mui/material";
 import { User, Star, Monitor, Shield } from "lucide-react";
-
+import Allimages from "../../../assets";
 
 const KeyFeaturesSection = () => {
   const features = [
@@ -47,31 +47,14 @@ const KeyFeaturesSection = () => {
                 justifyContent: "center",
               }}
             >
-             <img src="./src/assets/feature icons/AI-Powered Face Recoginition.svg" alt="AI-Powered Face Recognition" width={'130px'} height={'180px'} color="#1976d2" />
+              <img
+                src={Allimages.AIPoweredFaceRecoginition}
+                alt="AI-Powered Face Recognition"
+                width={"130px"}
+                height={"180px"}
+                color="#1976d2"
+              />
             </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              top: -4,
-              right: -4,
-              width: 16,
-              height: 16,
-              bgcolor: "#4caf50",
-              borderRadius: "50%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              sx={{
-                width: 8,
-                height: 8,
-                bgcolor: "white",
-                borderRadius: "50%",
-              }}
-            />
           </Box>
         </Box>
       ),
@@ -106,29 +89,12 @@ const KeyFeaturesSection = () => {
               justifyContent: "center",
             }}
           >
-                  <img src="./src/assets/feature icons/Event based Collections.svg" alt="AI-Powered Face Recognition" width={'130px'} height={'180px'} color="#1976d2" />
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: -8,
-              right: -8,
-              width: 32,
-              height: 32,
-              bgcolor: "#0d47a1",
-              borderRadius: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              sx={{
-                width: 16,
-                height: 16,
-                bgcolor: "white",
-                borderRadius: 1,
-              }}
+            <img
+              src={Allimages.EventBasedCollection}
+              alt="AI-Powered Face Recognition"
+              width={"130px"}
+              height={"180px"}
+              color="#1976d2"
             />
           </Box>
         </Box>
@@ -146,7 +112,7 @@ const KeyFeaturesSection = () => {
           sx={{
             width: 96,
             height: 96,
-         
+
             borderRadius: 4,
             display: "flex",
             alignItems: "center",
@@ -158,7 +124,6 @@ const KeyFeaturesSection = () => {
             sx={{
               width: 64,
               height: 48,
-           
               borderRadius: 2,
               display: "flex",
               flexDirection: "column",
@@ -167,30 +132,12 @@ const KeyFeaturesSection = () => {
               gap: 0.5,
             }}
           >
-            <img src="./src/assets/feature icons/User Friendly Interface.svg" alt="AI-Powered Face Recognition" width={'130px'} height={'180px'} color="#1976d2" />
-          
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              bottom: -4,
-              left: -4,
-              width: 24,
-              height: 24,
-       
-              borderRadius: 2,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              sx={{
-                width: 12,
-                height: 12,
-                bgcolor: "white",
-                borderRadius: 1,
-              }}
+            <img
+              src={Allimages.UserFriendlyInterface}
+              alt="AI-Powered Face Recognition"
+              width={"130px"}
+              height={"180px"}
+              color="#1976d2"
             />
           </Box>
         </Box>
@@ -208,7 +155,7 @@ const KeyFeaturesSection = () => {
           sx={{
             width: 96,
             height: 96,
-            bgcolor: "#1976d2",
+
             borderRadius: 4,
             display: "flex",
             alignItems: "center",
@@ -216,41 +163,15 @@ const KeyFeaturesSection = () => {
             position: "relative",
           }}
         >
-          <Box
-            sx={{
-              width: 64,
-              height: 64,
-              bgcolor: "#1565c0",
-              borderRadius: 3,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-                  <img src="./src/assets/feature icons/Privacy Protection.svg" alt="AI-Powered Face Recognition" width={'130px'} height={'180px'} color="#1976d2" />
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              top: -4,
-              right: -4,
-              width: 24,
-              height: 24,
-            
-              borderRadius: "50%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              sx={{
-                width: 12,
-                height: 12,
-                borderRadius: "50%",
-              }}
+
+          <img
+            src={Allimages.PrivacyProtection}
+            alt="AI-Powered Face Recognition"
+            width={"130px"}
+            height={"180px"}
+            color="#1976d2"
             />
-          </Box>
+
         </Box>
       ),
       align: "right",
@@ -266,7 +187,7 @@ const KeyFeaturesSection = () => {
             component="h2"
             sx={{
               color: "#1F3A63",
-                     fontFamily: "Waylimo",
+              fontFamily: "Waylimo",
               fontWeight: 400,
               fontSize: "48px",
               mb: 2,
@@ -280,8 +201,8 @@ const KeyFeaturesSection = () => {
               color: "#1F3A63",
               fontSize: "16px",
               maxWidth: "512px",
-                         fontFamily: "Poppins",
-                fontWeight: 400,
+              fontFamily: "Poppins",
+              fontWeight: 400,
             }}
           >
             Our platform is equipped with powerful features to enhance your

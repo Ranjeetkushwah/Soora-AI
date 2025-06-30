@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Grid, Typography, Button, Container, Divider } from '@mui/material';
 
 const CTASplit = () => {

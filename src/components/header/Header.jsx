@@ -16,16 +16,14 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import { LogOut } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
+import Allimages from '../../assets'
 
-export default function Header({onToggleSidebar, setIsLoggedIn} ) {
-
+export default function Header({ onToggleSidebar, setIsLoggedIn }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [logoutDialogOpen, setLogoutDialogOpen] = React.useState(false);
 
-
   const navigate = useNavigate();
   const isMenuOpen = Boolean(anchorEl);
-
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -42,43 +40,78 @@ export default function Header({onToggleSidebar, setIsLoggedIn} ) {
 
   const handleLogOut = () => {
     setLogoutDialogOpen(false);
-    // Perform logout logic here
-    navigate('/login');
+    navigate('/');
+    setIsLoggedIn(false);
   };
 
   const handleCancel = () => {
     setLogoutDialogOpen(false);
-     navigate('/dashboard');
+    navigate('/dashboard');
   };
-
-
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#1F3A63' }} >
-        <Toolbar>
-          <IconButton sx={{mr:1}} color="inherit" onClick={onToggleSidebar} >
-            <MenuIcon />
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: '#1F3A63',
+        }}
+      >
+        <Toolbar
+          sx={{
+            px: { xs: 1, sm: 2 }, // reduce horizontal padding on small screens
+            minHeight: { xs: 56, sm: 64 },
+          }}
+        >
+          <IconButton
+            sx={{ mr: 1 }}
+            color="inherit"
+            onClick={onToggleSidebar}
+            size="large"
+          >
+            <MenuIcon sx={{ fontSize: { xs: 24, sm: 30 } }} />
           </IconButton>
 
-          <Box sx={{ flexGrow: 1 }} onClick={() =>{setIsLoggedIn(false); navigate('/')}}>
-            <img src="./src/assets/white-01 1.svg" alt="Logo" height="32px" width="150px" />
+          {/* Logo */}
+          <Box
+            sx={{
+              flexGrow: 1,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+            onClick={() => {
+              setIsLoggedIn(false);
+              navigate('/');
+            }}
+          >
+            <Box
+              component="img"
+              src={Allimages.SooraLogoWhite}
+              alt="Logo"
+              sx={{
+                height: { xs: 24, sm: 32 },
+                width: { xs: 100, sm: 150 },
+              }}
+            />
           </Box>
 
+          {/* Profile Icon */}
           <Box>
-            <img
-              src="./src/assets/icons/Profile Button.svg"
+            <Box
+              component="img"
+              src={Allimages.ProfileIcon}
               alt="Profile"
-              height="32px"
-              width="28px"
-              style={{ cursor: 'pointer' }}
+              sx={{
+                height: { xs: 24, sm: 32 },
+                width: { xs: 20, sm: 28 },
+                cursor: 'pointer',
+              }}
               onClick={handleProfileMenuOpen}
             />
           </Box>
         </Toolbar>
       </AppBar>
-
-    
 
       {/* Profile Menu */}
       <Menu
@@ -88,12 +121,31 @@ export default function Header({onToggleSidebar, setIsLoggedIn} ) {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         PaperProps={{
-          sx: { width: 240, borderRadius: 2, padding: 1 },
+          sx: {
+            width: 240,
+            borderRadius: 2,
+            padding: 1,
+          },
         }}
       >
         <Box px={2} py={1}>
-          <Typography sx={{ fontWeight: 'bold', color: '#1F3A63' }}>Ranjeet Kushwah</Typography>
-          <Typography sx={{ fontSize: '14px', color: '#9E9E9E' }}>R.kushwah@braininventory.com</Typography>
+          <Typography
+            sx={{
+              fontWeight: 'bold',
+              color: '#1F3A63',
+              fontSize: { xs: '14px', sm: '16px' },
+            }}
+          >
+            Ranjeet Kushwah
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: { xs: '12px', sm: '14px' },
+              color: '#9E9E9E',
+            }}
+          >
+            R.kushwah@braininventory.com
+          </Typography>
         </Box>
 
         <Divider sx={{ my: 1 }} />
@@ -105,10 +157,13 @@ export default function Header({onToggleSidebar, setIsLoggedIn} ) {
           Change Password
         </MenuItem>
         <MenuItem onClick={() => navigate('/manage-payments')} sx={{ fontWeight: 500, color: '#1F3A63' }}>
-       Manage Payments
+          Manage Payments
         </MenuItem>
-         <MenuItem onClick={() => navigate('/media-subcription')} sx={{ fontWeight: 500, color: '#1F3A63' }}>
-     Manage Subscriptions
+        <MenuItem onClick={() => navigate('/media-subcription')} sx={{ fontWeight: 500, color: '#1F3A63' }}>
+          Manage Subscriptions
+        </MenuItem>
+        <MenuItem onClick={() => navigate('/media-dashboard')} sx={{ fontWeight: 500, color: '#1F3A63' }}>
+          Manage Dashboard
         </MenuItem>
 
         <Divider sx={{ my: 1 }} />
@@ -215,136 +270,3 @@ export default function Header({onToggleSidebar, setIsLoggedIn} ) {
     </Box>
   );
 }
-
-
-// import React, { useState } from "react";
-// import {
-//   AppBar,
-//   Toolbar,
-//   IconButton,
-//   Typography,
-//   Drawer,
-//   List,
-//   ListItem,
-//   ListItemText,
-//   Menu,
-//   MenuItem,
-//   Button,
-//   Dialog,
-//   DialogTitle,
-//   DialogContent,
-//   DialogActions,
-//   Avatar,
-//   Box,
-//   Divider,
-//   useMediaQuery
-// } from "@mui/material";
-// import { Menu as MenuIcon } from "@mui/icons-material";
-// import { User, LogOut, HelpCircle, AlertTriangle } from "lucide-react";
-
-// const Header = () => {
-//   const [drawerOpen, setDrawerOpen] = useState(false);
-//   const [anchorEl, setAnchorEl] = useState(null);
-//   const [logoutDialogOpen, setLogoutDialogOpen] = useState(false);
-//   const [isLoggedIn, setIsLoggedIn] = useState(true);
-
-//   const toggleDrawer = () => setDrawerOpen(!drawerOpen);
-//   const handleProfileClick = (event) => setAnchorEl(event.currentTarget);
-//   const handleProfileClose = () => setAnchorEl(null);
-//   const handleLogOutClick = () => {
-//     setLogoutDialogOpen(true);
-//     handleProfileClose();
-//   };
-//   const handleLogOut = () => {
-//     setLogoutDialogOpen(false);
-//     setIsLoggedIn(false);
-//   };
-//   const handleCancel = () => setLogoutDialogOpen(false);
-//   const handleLogin = () => setIsLoggedIn(true);
-
-//   return (
-//     <>
-//       <AppBar position="static" sx={{ backgroundColor: "#1F3A63" }}>
-//         <Toolbar>
-//           {isLoggedIn && (
-//             <IconButton edge="start" color="inherit" onClick={toggleDrawer}>
-//               <MenuIcon />
-//             </IconButton>
-//           )}
-
-//           <Box sx={{ flexGrow: 1 }}>
-//             <img
-//               src="/api/placeholder/150/32"
-//               alt="Soora Logo"
-//               style={{ height: 32 }}
-//             />
-//           </Box>
-
-//           {!isLoggedIn ? (
-//             <Box sx={{ display: 'flex', gap: 1 }}>
-//               <Button color="inherit" startIcon={<HelpCircle size={18} />}>FAQ</Button>
-//               <Button color="inherit" startIcon={<AlertTriangle size={18} />}>Report</Button>
-//               <Button color="inherit" variant="outlined">Sign Up</Button>
-//               <Button color="secondary" variant="contained" onClick={handleLogin}>Login</Button>
-//             </Box>
-//           ) : (
-//             <>
-//               <IconButton color="inherit" onClick={handleProfileClick}>
-//                 <User size={24} />
-//               </IconButton>
-//               <Menu
-//                 anchorEl={anchorEl}
-//                 open={Boolean(anchorEl)}
-//                 onClose={handleProfileClose}
-//               >
-//                 <Box sx={{ px: 2, py: 1 }}>
-//                   <Typography fontWeight="bold">Ranjeet Kushwah</Typography>
-//                   <Typography variant="body2" color="text.secondary">R.kushwah@braininventory.com</Typography>
-//                 </Box>
-//                 <Divider />
-//                 <MenuItem>Your profile</MenuItem>
-//                 <MenuItem>Change Password</MenuItem>
-//                 <Divider />
-//                 <MenuItem onClick={handleLogOutClick}>Log Out</MenuItem>
-//               </Menu>
-//             </>
-//           )}
-//         </Toolbar>
-//       </AppBar>
-
-//       <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
-//         <Box sx={{ width: 250 }}>
-//           <List>
-//             {['Dashboard', 'Profile', 'Settings'].map((text) => (
-//               <ListItem button key={text}>
-//                 <ListItemText primary={text} />
-//               </ListItem>
-//             ))}
-//           </List>
-//         </Box>
-//       </Drawer>
-
-//       <Dialog open={logoutDialogOpen} onClose={handleCancel}>
-//         <DialogTitle>Log Out</DialogTitle>
-//         <DialogContent>
-//           <Typography variant="body1" fontWeight="bold">
-//             Are you sure you want to log out?
-//           </Typography>
-//         </DialogContent>
-//         <DialogActions>
-//           <Button variant="contained" color="error" onClick={handleLogOut}>Log Out</Button>
-//           <Button variant="outlined" onClick={handleCancel}>Cancel</Button>
-//         </DialogActions>
-//       </Dialog>
-
-//       {/* Toggle button for demo */}
-//       <Box position="fixed" bottom={16} right={16}>
-//         <Button variant="contained" color="primary" onClick={() => setIsLoggedIn(!isLoggedIn)}>
-//           Toggle: {isLoggedIn ? "Logged In" : "Logged Out"}
-//         </Button>
-//       </Box>
-//     </>
-//   );
-// };
-
-// export default Header;

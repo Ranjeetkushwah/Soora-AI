@@ -15,6 +15,7 @@ import {
 import { CloudUpload, MoreVert } from "@mui/icons-material";
 import { ArrowBack as ArrowBackIcon } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import Allimages from "../../assets";
 
 
 export default function UploadPhotos() {
@@ -24,18 +25,18 @@ export default function UploadPhotos() {
   const promoImages = [
     {
       id: 1,
-      src: './src/assets/images/Frame 629142.svg',
-      alt: 'Frame 629142'
+      src: `${Allimages.EngageMentPhotoHand}`,
+      alt: 'EngageMentPhotoHand'
     },
     {
       id: 2,
-      src: './src/assets/images/Group 232.svg',
-      alt: 'Group 232'
+      src: `${Allimages.EngageMentEvent}`,
+      alt: 'EngageMentEvent'
     },
     {
       id: 3,
-      src: './src/assets/images/Group 233.svg',
-      alt: 'Group 232'
+      src: `${Allimages.Gifts}`,
+      alt: 'Gifts'
     }
   ];
   return (

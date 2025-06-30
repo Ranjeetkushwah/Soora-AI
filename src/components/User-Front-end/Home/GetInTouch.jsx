@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import {
   Box,
@@ -7,7 +9,6 @@ import {
   Button,
   Link,
   Divider,
-  IconButton,
 } from '@mui/material';
 import {
   Email,
@@ -24,35 +25,47 @@ const GetInTouch = () => {
       sx={{
         backgroundColor: '#1F3A63',
         color: 'white',
-        py: 8,
+        py: { xs: 6, md: 8 },
         px: { xs: 3, md: 8 },
-
       }}
-
     >
-
-      <Grid container spacing={60}>
+      <Grid container spacing={4} alignItems="flex-start">
         {/* Left Side - Form */}
-        <Grid item xs={12} md={6} pl={18}>
+        <Grid item xs={12} md={6}>
           <Typography
             variant="h4"
             sx={{
-              mb: 1,
-              fontFamily: "Waylimo",
+              mb: 2,
+              fontFamily: 'Waylimo',
               fontWeight: 400,
-              fontSize: "48px"
+              fontSize: { xs: '2.5rem', md: '3rem' },
+              textAlign: { xs: 'center', md: 'left' },
             }}
           >
             Get in touch
           </Typography>
-          <Typography variant="body1" sx={{ mb: 4 }}>
+
+          <Typography
+            variant="body1"
+            sx={{
+              mb: 4,
+              textAlign: { xs: 'center', md: 'left' },
+              maxWidth: { xs: '100%', md: '90%' },
+              mx: { xs: 'auto', md: 0 },
+            }}
+          >
             Have questions or need assistance? <br />
             Reach out to us anytime.
           </Typography>
 
           <Box
             component="form"
-            sx={{ display: 'flex', flexDirection: 'column', gap: 3, width: "200%" }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 3,
+              width: '100%',
+            }}
           >
             <TextField
               label="Full Name"
@@ -83,7 +96,7 @@ const GetInTouch = () => {
             <Button
               variant="contained"
               sx={{
-                alignSelf: 'flex-start',
+                alignSelf: { xs: 'center', md: 'flex-start' },
                 backgroundColor: 'white',
                 color: '#1F3A63',
                 textTransform: 'none',
@@ -98,27 +111,47 @@ const GetInTouch = () => {
             </Button>
           </Box>
         </Grid>
+
+        {/* Divider */}
+        <Grid
+          item
+          xs={12}
+          md="auto"
+          sx={{
+            display: { xs: 'none', md: 'flex' },
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Divider
+            orientation="vertical"
+            flexItem
+            sx={{ borderColor: 'white', height: '100%' }}
+          />
+        </Grid>
+
         {/* Right Side - Contact Info & Social */}
-        <Grid item xs={12} md={6}>
-          <Box bgcolor={'red'} >
-            <Divider
-              orientation="vertical"
-              flexItem
-              sx={{ display: { xs: 'none', md: 'block' }, mb: 3 }}
-            />
-          </Box>
-
-
-          <Box sx={{ pl: { md: 4 }, pt: { xs: 4, md: 0 } }}>
-            {/* Contact Info */}
+        <Grid item xs={12} md={5}>
+          <Box sx={{ pt: { xs: 4, md: 0 } }}>
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: 'bold', mb: 1 }}
+              sx={{
+                fontWeight: 'bold',
+                mb: 2,
+                textAlign: { xs: 'center', md: 'left' },
+              }}
             >
               Contact Us:
             </Typography>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                mb: 1,
+                justifyContent: { xs: 'center', md: 'flex-start' },
+              }}
+            >
               <Email sx={{ mr: 1 }} />
               <Link
                 href="mailto:contactus@soora.com"
@@ -129,24 +162,50 @@ const GetInTouch = () => {
               </Link>
             </Box>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-              <Phone sx={{ mr: 1 }} />
-              <Typography>+91 00000 00000</Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                mb: 1,
+                justifyContent: { xs: 'center', md: 'flex-start' },
+              }}
+            >
               <Phone sx={{ mr: 1 }} />
               <Typography>+91 00000 00000</Typography>
             </Box>
 
-            {/* Social Links */}
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                mb: 4,
+                justifyContent: { xs: 'center', md: 'flex-start' },
+              }}
+            >
+              <Phone sx={{ mr: 1 }} />
+              <Typography>+91 00000 00000</Typography>
+            </Box>
+
             <Typography
               variant="subtitle1"
-              sx={{ fontWeight: 'bold', mb: 1, mt: 9 }}
+              sx={{
+                fontWeight: 'bold',
+                mb: 2,
+                mt: 4,
+                textAlign: { xs: 'center', md: 'left' },
+              }}
             >
               Follow Us :
             </Typography>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1,
+                alignItems: { xs: 'center', md: 'flex-start' },
+              }}
+            >
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Instagram sx={{ mr: 1 }} />
                 <Typography>@instagramhandle</Typography>

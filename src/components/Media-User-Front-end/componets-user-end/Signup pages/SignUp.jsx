@@ -13,15 +13,11 @@ import {
   MenuItem,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import {
-  Email,
-  Phone,
-  Business,
-  Lock,
-} from "@mui/icons-material";
+import { Email, Phone, Business, Lock } from "@mui/icons-material";
 import Person2SharpIcon from "@mui/icons-material/Person2Sharp";
 import SmartphoneTwoToneIcon from "@mui/icons-material/SmartphoneTwoTone";
 import { useNavigate } from "react-router-dom";
+import Allimages from "../../../../assets";
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -36,7 +32,7 @@ export default function SignUp() {
     confirmPassword: "",
   });
 
-      const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,7 +45,7 @@ export default function SignUp() {
   };
 
   return (
-    <Grid container sx={{ minHeight: "100vh" ,  }}>
+    <Grid container sx={{ minHeight: "100vh", backgroundColor: "#fff" }}>
       {/* Left Side */}
       <Grid
         item
@@ -57,7 +53,7 @@ export default function SignUp() {
         md={6}
         sx={{
           width: "49%",
-          backgroundImage: "url('/src/assets/Background-Image 2.jpg')",
+          backgroundImage: `url(${Allimages.BackgroundImage})`,
           color: "#fff",
           p: 4,
           display: "flex",
@@ -65,23 +61,36 @@ export default function SignUp() {
         }}
       >
         <Box sx={{ mx: "auto" }}>
-          <Typography variant="h4" sx={{fontFamily:'Waylimo',fontWeight:400,textAlign:"center"}} gutterBottom>
+          <Typography
+            variant="h4"
+            sx={{ fontFamily: "Waylimo", fontWeight: 400, textAlign: "center" }}
+            gutterBottom
+          >
             The simplest way to manage and upload
-        <br/>
+            <br />
             event photos effortlessly.
           </Typography>
           <Box mt={10}>
             <img
-              src="/src/assets/laptop-screen.svg"
+              src={Allimages.LaptopScreen}
               alt="Laptop"
               width="590px"
               height="330px"
             />
           </Box>
-          <Typography variant="body1" sx={{fontFamily:'Poppins',fontWeight:500,textAlign:"center",fontSize:"25px"}} mt={4}>
-            Join our platform and streamline your photo management  <br/> process.
-            Upload, organize, and share event photos with just a  <br/> few clicks, all
-            in one place.
+          <Typography
+            variant="body1"
+            sx={{
+              fontFamily: "Poppins",
+              fontWeight: 500,
+              textAlign: "center",
+              fontSize: "25px",
+            }}
+            mt={4}
+          >
+            Join our platform and streamline your photo management <br />{" "}
+            process. Upload, organize, and share event photos with just a <br />{" "}
+            few clicks, all in one place.
           </Typography>
         </Box>
       </Grid>
@@ -92,17 +101,16 @@ export default function SignUp() {
         xs={12}
         md={6}
         sx={{
-          backgroundColor: "#fff",
           p: 6,
           display: "flex",
           alignItems: "center",
-          color: "#1F3A63",       
+          color: "#1F3A63",
         }}
       >
-        <Box sx={{ width: "100%", maxWidth: 500, ml: "110px", }}>
+        <Box sx={{ width: "100%", maxWidth: 500, ml: "110px" }}>
           <Box sx={{ textAlign: "center", mb: 4 }}>
             <img
-              src="/src/assets/soora-icon-dark-blue.svg"
+              src={Allimages.SooraIconDarkBlue}
               alt="Soora"
               width={150}
               height={70}
@@ -110,7 +118,7 @@ export default function SignUp() {
           </Box>
 
           <Typography variant="h5" align="center" gutterBottom>
-            Sign Up
+            Sign up
           </Typography>
           <Typography
             variant="body2"
@@ -243,6 +251,7 @@ export default function SignUp() {
               type={showConfirmPassword ? "text" : "password"}
               value={formData.confirmPassword}
               onChange={handleChange}
+              helperText="Password must be at least 8 characters and include letters, numbers, and symbols."
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -255,6 +264,10 @@ export default function SignUp() {
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
+                      edge="end"
+                      aria-label={
+                        showConfirmPassword ? "Hide password" : "Show password"
+                      }
                     >
                       {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
@@ -264,37 +277,26 @@ export default function SignUp() {
               required
             />
 
-            <FormControlLabel
-              control={<Checkbox required />}
-              label={
-                <Typography variant="body2">
-                  By signing up, I agree to the{" "}
-                  <a href="#" style={{ textDecoration: "underline" }}>
-                    terms of service
-                  </a>{" "}
-                  and{" "}
-                  <a href="#" style={{ textDecoration: "underline" }}>
-                    privacy policy
-                  </a>
-                  .
-                </Typography>
-              }
-              sx={{ mt: 2 }}
-            />
-
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 2, bgcolor: "#1F3A63", borderRadius: "8px" }}
-              onClick={()=>{   navigate("/verification")}}
+              onClick={() => {
+                navigate("/verification");
+              }}
             >
               Verify
             </Button>
 
             <Typography variant="body2" align="center" sx={{ mt: 2 }}>
               Already have an account?{" "}
-              <span onClick={()=>{  navigate("/login");}} style={{ color: "#1e293b", fontWeight: 500 }}>
+              <span
+                onClick={() => {
+                  navigate("/login");
+                }}
+                style={{ color: "#1e293b", fontWeight: 500 }}
+              >
                 Log In
               </span>
             </Typography>

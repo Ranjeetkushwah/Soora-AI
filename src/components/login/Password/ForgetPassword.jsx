@@ -12,6 +12,7 @@ import {
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
 import EmailIcon from '@mui/icons-material/Email';
+import Allimages from '../../../assets';
 
 
 export default function ForgotPassword() {
@@ -20,6 +21,7 @@ export default function ForgotPassword() {
 
   const handleReset = () => {
     console.log("Reset email sent to:", email);
+    navigate('/changepassword')
     // You can add actual logic here to send reset email
   };
 
@@ -32,7 +34,7 @@ export default function ForgotPassword() {
         md={6}
         sx={{
           width: "49%",
-          backgroundImage: "url('/src/assets/Background-Image 2.jpg')",
+          backgroundImage: `url(${Allimages.BackgroundImage})`,
           color: "#fff",
           p: 4,
           display: "flex",
@@ -51,7 +53,7 @@ export default function ForgotPassword() {
 
         <Box
           component="img"
-          src="/src/assets/laptop-screen.svg"
+          src={Allimages.LaptopScreen}
           alt="Laptop View"
           sx={{ width: "100%", maxWidth: 500, my: 4 }}
         />
@@ -60,23 +62,21 @@ export default function ForgotPassword() {
           variant="body1"
           sx={{ maxWidth: 500, fontSize: "18px", fontFamily: "Poppins" }}
         >
-          Don’t worry, you’re just a step away from accessing your events.<br/> Enter your email to receive a link and create a new password.<br/>  We'll help you regain access to your media management in no  <br/> time.
+          Don’t worry, you’re just a step away from accessing your events. Enter your email to receive a link and create a new password. We'll help you regain access to your media management in no   time.
         </Typography>
       </Grid>
 
       {/* Right Section */}
       <Grid
-        item
-        xs={12}
-        md={6}
+
         sx={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          p: { xs: 4, md: 8 },
+          px: { xs: 4, md: 8 },
           marginLeft: "200px",
           position: "relative",
-     
+
         }}
       >
          <Box
@@ -90,7 +90,7 @@ export default function ForgotPassword() {
 
     >
       {/* Back Button */}
-      <Box width="100%" display="flex" alignItems="center" mb={4} sx={{position:'absolute',top:"-36px",left: "-231px"}}>
+          <Box width="100%" display="flex" alignItems="center" mb={4} sx={{ position: 'absolute', top: 0, left: "-231px" }}>
         <IconButton color="primary">
           <ArrowBackIcon />
         </IconButton>
@@ -100,9 +100,9 @@ export default function ForgotPassword() {
       </Box>
 
       {/* Icon */}
-       <Box sx={{ textAlign: "center", mb: 4 }}>
+          <Box sx={{ textAlign: "center", mb: 4, marginTop: -20 }}>
                   <img
-                    src="/src/assets/soora-icon-dark-blue.svg"
+              src={Allimages.SooraIconDarkBlue}
                     alt="Soora"
                     width={150}
                     height={70}
@@ -157,7 +157,7 @@ export default function ForgotPassword() {
       {/* Footer */}
       <Typography variant="body2" mt={4} color="textSecondary">
         Don’t have an account?{' '}
-        <Link href="#" underline="hover" fontWeight={500}>
+            <Link onClick={() => navigate("/signup")} underline="hover" fontWeight={500}>
           Sign Up
         </Link>
       </Typography>

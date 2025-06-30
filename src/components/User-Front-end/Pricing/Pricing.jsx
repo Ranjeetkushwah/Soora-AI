@@ -7,6 +7,7 @@ import SignUpPromo from "../Home/SignUpPromo";
 import FQAforSubcription from "./FQAforSubcription";
 import GetInTouch from '../Home/GetInTouch'
 import HomeFooter from '../Home/HomeFooter'
+import Allimages from '../../../assets'
 
 export default function Pricing() {
     const features = [
@@ -29,10 +30,10 @@ export default function Pricing() {
 
     return (
         <>
-            {" "}
+
             <Box
                 sx={{
-                    backgroundImage: "url('./src/assets/Background-Image 2.svg')",
+                    backgroundImage: `url(${Allimages.BackgroundImage})`,
                     backgroundSize: "cover", // optional: make it full
                     backgroundRepeat: "no-repeat", // optional
                     backgroundPosition: "center", // optional

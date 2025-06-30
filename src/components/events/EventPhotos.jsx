@@ -10,28 +10,29 @@ import {
   CardMedia,
   CardContent
 } from "@mui/material";
+import Allimages from "../../assets";
 
 export default function EventPhotos() {
   const folderData = [
     {
       title: "Engagement Photos",
       count: 492,
-      image: "/src/assets/images/Make a grid of 9 images of engagement pictures (1).svg"
+      image: `${Allimages.EngagementPhotos}`
     },
     {
       title: "Wedding Mass",
       count: 1000,
-      image: "/src/assets/images/Make a grid of 9 images of engagement pictures (1).svg"
+      image: `${Allimages.WeddingVowsPhotos}`
     },
     {
       title: "Communion",
       count: 1000,
-      image: "/src/assets/images/Make a grid of 9 images of engagement pictures (1).svg"
+      image: `${Allimages.EngagementPhotos}`
     },
     {
       title: "Wedding Vows",
       count: 1000,
-      image: "/src/assets/images/Make a grid of 9 images of engagement pictures.svg" // The image you just uploaded
+      image: `${Allimages.WeddingVowsPhotos}`
     }
   ];
 
@@ -39,18 +40,18 @@ export default function EventPhotos() {
   const photoData = [
     {
       id: 1,
-      src: './src/assets/images/Frame 629142.svg',
-      alt: 'Dashboard Overview'
+      src: `${Allimages.EngageMentPhotoHand}`,
+      alt: 'EngageMent Photo hand'
     },
     {
       id: 2,
-      src: './src/assets/images/Group 232.svg',
-      alt: 'Event Management'
+      src: `${Allimages.EngageMentEvent}`,
+      alt: ' EngageMent Event'
     },
     {
       id: 3,
-      src: './src/assets/images/Group 233.svg',
-      alt: 'Subscription Tracking'
+      src: `${Allimages.Gifts}`,
+      alt: 'Gifts'
     }
   ];
 
