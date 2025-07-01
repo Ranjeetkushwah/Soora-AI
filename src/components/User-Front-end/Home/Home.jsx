@@ -76,7 +76,7 @@ const Home = () => {
               mb: { xs: 4, md: 0 },
             }}
           >
-            <Box sx={{ maxWidth: { xs: "100%", md: 600 } }}>
+            <Box sx={{ maxWidth: { xs: "100%", md: 500 } }}>
               <Typography
                 variant="h2"
                 component="h1"
@@ -203,7 +203,7 @@ const Home = () => {
               sx={{
                 ml: { xs: 0, md: 4 },
                 width: "100%",
-                maxWidth: { xs: "300px", sm: "400px", md: "692px" },
+                maxWidth: { xs: "300px", sm: "400px", md: "602px" },
               }}
             >
               {/* Glow */}
