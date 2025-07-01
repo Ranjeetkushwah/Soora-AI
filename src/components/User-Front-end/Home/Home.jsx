@@ -195,7 +195,7 @@ const Home = () => {
             sx={{
               order: { xs: 1, md: 1 },
               textAlign: { xs: "center", md: "left" },
-              mb: { xs: 4, md: 0 },
+              mb: { xs: 4, md: -4 },
             }}
           >
             <Box
