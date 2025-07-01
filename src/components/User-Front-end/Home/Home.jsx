@@ -18,8 +18,8 @@ import FAQSection from "./FAQSection.jsx";
 import CTASplit from "./CTASplit.jsx";
 import GetInTouch from "./GetInTouch.jsx";
 import HomeFooter from "./HomeFooter.jsx";
-import AppFeature from './AppFeature.jsx';
-import Allimages from '../../../assets'
+import AppFeature from "./AppFeature.jsx";
+import Allimages from "../../../assets";
 
 const Home = () => {
   const theme = useTheme();
@@ -33,11 +33,15 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           py: { xs: 3, sm: 4, md: 5 },
-          px: { xs: 2, sm: 4, md: 8 },
+          px: { xs: 1, sm: 3, md: 8 },
           zIndex: 1,
           overflow: "hidden",
           minHeight: { xs: "100vh", md: "81vh" },
           color: "#fff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center", // optional for text
         }}
       >
         {/* Background Pattern */}
@@ -58,7 +62,7 @@ const Home = () => {
           sx={{
             position: "relative",
             zIndex: 1,
-            flexDirection: { xs: "column", md: "row" }
+            flexDirection: { xs: "column", md: "row" },
           }}
         >
           {/* Left Content */}
@@ -68,7 +72,8 @@ const Home = () => {
             md={6}
             sx={{
               order: { xs: 1, md: 1 },
-              textAlign: { xs: "center", md: "left" }
+              textAlign: { xs: "center", md: "left" },
+              mb: { xs: 4, md: 0 },
             }}
           >
             <Box sx={{ maxWidth: { xs: "100%", md: 600 } }}>
@@ -94,7 +99,8 @@ const Home = () => {
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     fontFamily: "Waylimo",
-                    fontWeight: 400
+                    fontWeight: 400,
+                    fontSize: { xs: "1rem", md: "1.125rem" },
                   }}
                 >
                   Instantly recognized by AI
@@ -142,11 +148,13 @@ const Home = () => {
                   </Typography>
                 </Box>
                 <Box display="flex" alignItems="center" gap={2}>
-                  <Avatar sx={{
-                    bgcolor: "info.main",
-                    width: { xs: 28, md: 32 },
-                    height: { xs: 28, md: 32 }
-                  }}>
+                  <Avatar
+                    sx={{
+                      bgcolor: "info.main",
+                      width: { xs: 28, md: 32 },
+                      height: { xs: 28, md: 32 }
+                    }}
+                  >
                     <ShieldIcon fontSize="small" />
                   </Avatar>
                   <Typography sx={{ fontSize: { xs: "0.9rem", md: "1rem" } }}>
@@ -185,9 +193,9 @@ const Home = () => {
             xs={12}
             md={6}
             sx={{
-              order: { xs: 2, md: 2 },
-              display: "flex",
-              justifyContent: "center"
+              order: { xs: 1, md: 1 },
+              textAlign: { xs: "center", md: "left" },
+              mb: { xs: 4, md: 0 },
             }}
           >
             <Box
@@ -195,7 +203,7 @@ const Home = () => {
               sx={{
                 ml: { xs: 0, md: 4 },
                 width: "100%",
-                maxWidth: { xs: "300px", sm: "400px", md: "692px" }
+                maxWidth: { xs: "300px", sm: "400px", md: "692px" },
               }}
             >
               {/* Glow */}
@@ -218,10 +226,11 @@ const Home = () => {
                 alt="Phone in hand"
                 sx={{
                   width: "100%",
+                  maxWidth: { xs: "300px", sm: "400px", md: "692px" },
                   height: "auto",
                   zIndex: 1,
                   position: "relative",
-                  marginBottom: { xs: "-20px", md: "-45px" }
+                  marginBottom: { xs: "-20px", md: "-45px" },
                 }}
               />
 
@@ -232,22 +241,15 @@ const Home = () => {
                   height: { xs: 48, sm: 56, md: 64 },
                   borderRadius: 4,
                   display: "flex",
-                  flexDirection: 'column',
+                  flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
                   mb: 3,
                   position: "absolute",
-                  top: {
-                    xs: "40%",
-                    sm: "42%",
-                    md: "279px"
-                  },
-                  right: {
-                    xs: "41%",
-                    sm: "30%",
-                    md: "313px"
-                  },
-                  zIndex: 99
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: 99,
                 }}
               >
                 <Box sx={{ textAlign: "center" }}>
@@ -260,7 +262,7 @@ const Home = () => {
                       width: "auto",
                       height: "auto",
                       maxWidth: "150px",
-                      maxHeight: "70px"
+                      maxHeight: "70px",
                     }}
                   />
                 </Box>
@@ -269,7 +271,7 @@ const Home = () => {
                   sx={{
                     fontSize: { xs: "8px", sm: "14px", md: "16px" },
                     width: { xs: "120px", sm: "160px", md: "190px" },
-                    textAlign: "center"
+                    textAlign: "center",
                   }}
                   color="#1F3A63"
                 >
@@ -281,7 +283,7 @@ const Home = () => {
                     fontSize: { xs: "8px", sm: "14px", md: "16px" },
                     width: { xs: "130px", sm: "170px", md: "200px" },
                     textAlign: "center",
-                    color: "#1F3A63"
+                    color: "#1F3A63",
                   }}
                 >
                   App Homescreen
@@ -299,7 +301,7 @@ const Home = () => {
           <Box
             mb={{ xs: 6, md: 8 }}
             sx={{
-              textAlign: { xs: "center", md: "left" }
+              textAlign: { xs: "center", md: "left" },
             }}
           >
             <Typography
@@ -312,7 +314,7 @@ const Home = () => {
                 fontSize: { xs: "1.75rem", sm: "2.5rem", md: "3rem" },
                 fontFamily: "Waylimo",
                 fontWeight: 400,
-                mb: { xs: 2, md: 3 }
+                mb: { xs: 2, md: 3 },
               }}
             >
               How it works
@@ -323,7 +325,7 @@ const Home = () => {
                 color: "#1F3A63",
                 lineHeight: 1.6,
                 fontSize: { xs: "1rem", sm: "1.1rem", md: "1.25rem" },
-                maxWidth: { xs: "100%", md: "600px" }
+                maxWidth: { xs: "100%", md: "600px" },
               }}
             >
               Discovering your photos has never been easier.
@@ -359,7 +361,7 @@ const Home = () => {
                   left: "50%",
                   transform: "translate(-50%, -50%)",
                   textAlign: "center",
-                  px: { xs: 2, md: 0 }
+                  px: { xs: 2, md: 0 },
                 }}
               >
                 <Typography
@@ -367,7 +369,7 @@ const Home = () => {
                   sx={{
                     color: theme.palette.grey[600],
                     mt: 2,
-                    fontSize: { xs: "0.9rem", md: "1rem" }
+                    fontSize: { xs: "0.9rem", md: "1rem" },
                   }}
                 >
                   Video of Soora Application plays here.
