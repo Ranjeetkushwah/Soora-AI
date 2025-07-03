@@ -28,10 +28,16 @@ const TechnologySection = () => {
           pt: "74px",
           pb: "35px",
           height: "fit-content",
+          display: "flex",
+          justifyContent: 'center',
+          alignContent: "center",
+          flexDirection: "row",
+          flexWrap: "wrap"
         }}
       >
+        <Box>
         {/* Header */}
-        <Box sx={{ mb: 6, maxWidth: 800 }}>
+          <Box sx={{ mb: 6, maxWidth: 800, mr: 20 }}>
           <Typography
             variant="h4"
             sx={{
@@ -62,7 +68,7 @@ const TechnologySection = () => {
         </Box>
 
         {/* Technology Features */}
-        <Grid container spacing={4} sx={{ maxWidth: 800 }}>
+          <Grid spacing={4} sx={{ maxWidth: 800, pr: 20 }}>
           {technologies.map((item, index) => (
             <Grid item xs={12} key={index}>
               <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -118,29 +124,53 @@ const TechnologySection = () => {
             </Grid>
           ))}
         </Grid>
+        </Box>
 
         {/* Side Accent Shape */}
-        <Box
-          sx={{
-            position: "absolute",
-            width: "355px",
-            height: "679px",
-            bgcolor: "#1F3A63",
-            clipPath: "polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)",
-            top: 0,
-            right: 0,
-          }}
-        />
-        <Box
-          sx={{
-            position: "absolute",
-            top: "525px",
-            right: 0,
-            borderTop: "155px solid transparent",
-            borderRight: "75px solid #FAE6D7",
-            zIndex: 1,
-          }}
-        />
+        <Box>
+          <Box
+            sx={{
+              position: "absolute",
+              width: {
+                xs: "40%",    // mobile
+                sm: "30%",    // tablets
+                md: "20%",    // desktops
+                lg: "18%",    // large screens
+                xl: "15%",    // extra large screens
+              },
+              height: "100%",
+              bgcolor: "#1F3A63",
+              clipPath: "polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)",
+              top: 0,
+              right: 0,
+            }}
+          />
+          <Box
+            sx={{
+              width: 0,
+              height: 0,
+              borderLeft: {
+                xs: '15vw solid transparent',
+                sm: '10vw solid transparent',
+                md: '7vw solid transparent',
+                lg: '5vw solid transparent',
+                xl: '4vw solid transparent',
+              },
+              borderBottom: {
+                xs: '30vh solid #FFE9D8',
+                sm: '25vh solid #FFE9D8',
+                md: '20vh solid #FFE9D8',
+                lg: '18vh solid #FFE9D8',
+                xl: '15vh solid #FFE9D8',
+              },
+              position: 'absolute',
+              bottom: 0,
+              right: 0,
+
+            }}
+          />
+
+        </Box>
       </Box>
     </>
   );
