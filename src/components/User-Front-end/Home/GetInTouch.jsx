@@ -27,7 +27,12 @@ const GetInTouch = () => {
         color: 'white',
         py: { xs: 6, md: 8 },
         px: { xs: 3, md: 8 },
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column"
       }}
+
     >
       <Grid container spacing={4} alignItems="flex-start">
         {/* Left Side - Form */}
